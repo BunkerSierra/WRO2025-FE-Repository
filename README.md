@@ -1,8 +1,29 @@
 Engineering materials
 ====
 
-This repository contains engineering materials of a self-driven vehicle's model participating in the WRO Future Engineers competition in the season 2022.
+This repository contains engineering materials of a self-driven vehicle's model participating in the WRO Future Engineers competition in the season 2025.
 
+BOM (electrical and mechanical parts):
+
+Electric parts:
+-Arduino UNO rev3 - x1
+-Arduino servo shield for Nano and UNO - x1
+-RaspberryPi 4 1gb Model B - x1
+-RaspberryPi Camera - x1
+-Motor Driver IMS-2 Wingxine - x1
+-5v DC Motor - x1
+-Servomotor MG90S(9gr) - x1 
+-Ultrasonic Sensor HC-SR04P - x3
+
+Power parts:
+- 3.7v 9900 mAh 18650 batteries - x4
+- DC-DC Buck Converter Module LM2596 - x1
+
+Mechanical parts:
+- commercial steering system (Modified) - x1
+- Commercial Differential system (Modified) - x1
+- Commercial wheels - x4
+  
 ## Content
 
 * `t-photos` contains 2 photos of the team (an official one and one funny photo with all team members)
@@ -17,10 +38,3 @@ This repository contains engineering materials of a self-driven vehicle's model 
 
 _This part must be filled by participants with the technical clarifications about the code: which modules the code consists of, how they are related to the electromechanical components of the vehicle, and what is the process to build/compile/upload the code to the vehicle’s controllers._
 
-## How to prepare the repo based on the template
-
-_Remove this section before the first commit to the repository_
-
-1. Clone this repo by using the `git clone` functionality.
-2. Remove `.git` directory
-3. [Initialize a new public repository on GitHub](https://github.com/new) by following instructions from "create a new repository on the command line" section (appeared after pressing "Create repository" button).
