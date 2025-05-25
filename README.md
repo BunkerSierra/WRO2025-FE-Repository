@@ -6,14 +6,14 @@ This repository contains engineering materials of a self-driven vehicle's model 
 BOM (electrical and mechanical parts):
 
 Electric parts:
--Arduino UNO rev3 - x1
--Arduino servo shield for Nano and UNO - x1
--RaspberryPi 4 1gb Model B - x1
--RaspberryPi Camera - x1
--Motor Driver IMS-2 Wingxine - x1
--5v DC Motor - x1
--Servomotor MG90S(9gr) - x1 
--Ultrasonic Sensor HC-SR04P - x3
+- Arduino UNO rev3 - x1
+- Arduino servo shield for Nano and UNO - x1
+- RaspberryPi 4 1gb Model B - x1
+- RaspberryPi Camera - x1
+- Motor Driver IMS-2 Wingxine - x1
+- 5v DC Motor - x1
+- Servomotor MG90S(9gr) - x1 
+- Ultrasonic Sensor HC-SR04P - x3
 
 Power parts:
 - 3.7v 9900 mAh 18650 batteries - x4
@@ -36,5 +36,5 @@ Mechanical parts:
 
 ## Introduction
 
-_This part must be filled by participants with the technical clarifications about the code: which modules the code consists of, how they are related to the electromechanical components of the vehicle, and what is the process to build/compile/upload the code to the vehicle’s controllers._
+
 
