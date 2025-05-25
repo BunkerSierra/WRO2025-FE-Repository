@@ -35,6 +35,15 @@ Mechanical parts:
 * `other` is for other files which can be used to understand how to prepare the vehicle for the competition. It may include documentation how to connect to a SBC/SBM and upload files there, datasets, hardware specifications, communication protocols descriptions etc. If there is nothing to add to this location, the directory can be removed.
 
 ## Introduction
+Ultrasonic Sensors:
+The robot's ultrasonic sensors have two purposes. The side ones are programmed for center finding and wall following, and the front one is designed to prevent it from colliding with obstacles. If it detects an obstacle within 20 centimeters of the robot, it stops and reverses (only in the areas where it is allowed to reverse).
+In the free lap program, the robot first uses the center finding function before making the first turn. When it turns, it checks which sensor is detecting the shortest distance, and that sensor will follow the wall. From that point on, the robot will make all the necessary turns to complete the free lap. This last function also lets the robot know which direction it will have to turn: clockwise or counterclockwise.
+This is the code it uses to calculate the distance in centimeters in the arduino IDE:
 
-
-
+digitalWrite(trigPin, LOW);
+delayMicroseconds(2);
+digitalWrite(trigPin, HIGH);
+delayMicroseconds(10);
+digitalWrite(trigPin, LOW);
+long duration = pulseIn(echoPin, HIGH);
+float distance = duration * 0.0343 / 2;
