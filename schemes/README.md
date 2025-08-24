@@ -5,8 +5,7 @@ En esta seccion, se presentaran los diagramas electricos de todos los componente
 
 Manejo de Movilidad
 ===
-Motor DC 12v con encoder 
-==
+## Motor DC 12v con encoder 
 Escogimos este motor principalmente por el encoder ya incluido en el, ya que con este sensor podemos conocer la posición del robot y ese dato nos aporta varios beneficios en nuestra solución: nos permite conocer cuantas vueltas ha dado, la distancia que se ha desplazado el robot, ayudarnos a estacionarnos en paralelo, en general todas las variables que estén relacionadas con la posición del robot. 
 Imagen
 
@@ -22,13 +21,12 @@ En la foto se puede ver la revisión actual del soporte en donde el motor ya se 
 
 Imagen transitatoria de los engranes Viejo----- > Nuevo 
 
-Dirección
-==
+## Dirección
 Nuestra dirección funciona a partir de enlances que están conectados a manguetas y en el centro de una de las vigas de los enlaces hay una pieza que se conecta a un servomotor MG90S, el servomotor nos permite llevar la dirección a los ángulos que nosotros necesitamos dentro de nuestro algoritmo. Estos son diseños realizados por el equipo y para fabricarlos utilizamos MDF para los enlaces e impresión 3D para las manguetas.
 Foto de la dirección y sus piezas
 Utilizamos llantas de lego, en especifico el modelo que tiene la medida 62.4mm ya que las hemos utilizado en competencias anteriores de la categoría robomission, confiamos mucho en ellas tanto por su agarre al suelo y poca fricción que generan.
 
-##Movimiento 
+## Movimiento 
 Para hacer que el robot se mueva derecho utilizamos un girosensor con un controlador PD, este nos permite hacer que el robot mantenga su posición al avanzar, como anteriormente hemos mencionado es imposible que el robot siempre se mantenga derecho, pero con este programa y sensor podemos hacer que el robot mantenga su posición por una buena cantidad de distancia y su desviación es muy pequeña , nunca superando los 2 cm del punto inicial. 
 De igual manera utilizamos el Girosensor para las vueltas del robot, al momento de llegar al punto deseado el robot gira la dirección y el robot avanza hasta detectar el ángulo deseado, cuando llega al ángulo marcado detiene el motor y regresa la dirección a la posición original. 
 
@@ -36,13 +34,11 @@ De igual manera utilizamos el Girosensor para las vueltas del robot, al momento 
 Gestión de Potencia y los Sentidos
 ====
 
-Energía
-==
+## Energía
 El robot utiliza baterías de 3.7v a 9900mAh(18650), en total usa 6 baterías y están divididas en 3 portabaterias conectados en paralelo, esto ultimo para administra de manera eficiente la corriente del robot. El voltaje máximo del robot es de 8.4v.
 Para entregarle la energía suficiente a nuestra computadora gráfica, el RaspBerry pi 4, utilizamos un regulador de voltaje regulado a 5.1v. Esto permite que la placa pueda funcionar correctamente sin la necesidad de conectarlo a un tomacorriente, cabe recalcar que al inicio nuestras pruebas para la gestión de obstáculos las realizábamos de esa manera, con el RaspBerry conectado a un tomacorriente al inicio esto nos permitió ver el comportamiento de nuestro código, pero a futuro era obvio que teníamos solucionar este problema ya que el robot no puede estar conectado a un tomacorriente durante las pruebas;).
 
-Sensores
-==
+## Sensores
 Al inicio de la temporada nuestra propuesta fue utilizar los sensores laser VL53L0X, pensamos que serían la mejor opción por su largo alcance y precisión descrita, entonces nuestro primer chasis lo diseñamos teniendo en mente el uso de esos sensores. Conforme Realizamos pruebas notamos que por exactamente las características que seleccionamos esos sensores nos estaban afectando a nuestras pruebas y el algoritmo que propusimos, Los sensores no tienen un rango de visón recto, sino cónico y eso hacia que los sensores detectaran el suelo y las pruebas fallaban mucho. Por si no fuera poco, usar 3 de esos sensores consumían una cantidad intrigante de memoria de nuestro microcontrolador (Arduino UNO en ese momento).
 Todos estos problemas nos condujeron a tomar la decisión de reemplazar los sensores laser por sensores ultrasónicos HC - SR04, con esos sensores participamos en la etapa regional y a día de hoy siguen siendo parte de nuestro modelo actual de robot, hacer el cambio fue sencillo ya que los soportes que utilizamos para los sensores ultrasónicos ya los habíamos diseñado para proyectos anteriores, e incorporarlos al chasis fue sencillo ya que siempre intentamos que los accesorios y sensores de nuestros proyectos sean modulares, ósea que sean fácil de reemplazar y el diseño del encastre para encajar el soporte de los sensores ultrasónicos en el chasis era el mismo que el de los sensores laser.
 
