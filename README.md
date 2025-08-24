@@ -10,8 +10,8 @@ Partes electricas:
 -	Raspberry pi 4 model b (1GB RAM)
 -	Raspberry pi cámara 
 -	Motor driver IMS-2 WINGXINE
--	Regulador de voltaje ¿
--	Motor DC 12v con encoder ¿
+-	Regulador de voltaje 
+-	Motor DC 12v con encoder GA37-520
 -	Servomotor MG90S
 -	3 sensores ultrasónicos HC-SR04P
 -	Buzzer pasivo
