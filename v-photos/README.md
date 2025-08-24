@@ -1,4 +1,4 @@
-Vehicle's photos
+otos del Vehiculo
 ====
 
-This directory must contain 6 photos of the vehicle (from every side, from top and bottom)
+Ese apartado cuenat con las 6 imagenes de todas las vistas del robot, en otras secciones del repositorio hay mas imagenes del robot, pero de puntos especificos que se mencionan en dichos apartados.
