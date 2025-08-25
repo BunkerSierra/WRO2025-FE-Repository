@@ -1,7 +1,7 @@
 Diagramas Electricos
 ====
 
-En esta seccion, se presentaran los diagramas electricos de todos los componentes electricos y una descripcion de su funcionamiento. Ademas se desglosara a grandes rasgos el hardware del robot y como se conecta con las piezas mecanicas del robot, todos los modelos y dise;os 3d mencionados en este aprtado se encuentran disponibles en la carpeta[models](/models).
+En esta seccion, se presentaran los diagramas electricos de todos los componentes electricos y una descripcion de su funcionamiento. Ademas se desglosara a grandes rasgos el hardware del robot y como se conecta con las piezas mecanicas del robot, todos los modelos y dise;os 3d mencionados en este aprtado se encuentran disponibles en la carpeta [models](/models).
 
 Manejo de Movilidad
 ===
@@ -45,3 +45,14 @@ Todos estos problemas nos condujeron a tomar la decisión de reemplazar los sens
 Esto hizo que la implementación y pruebas de los sensores fuera un cambio accesible y rápido.
 
  Anteriormente mencionamos que contamos con 3 sensores ultrasónicos, 1 al frente del robot y los otros 2 se encentran a los costados, los sensores de los contados son principalmente utilizados para encontrar la dirección de giro del robot, una vez el robot sale del primer cuadrante (en ambos desafíos) siempre habrá un lado donde halla barrera y un lado que no tenga barrera, el sensor que detecte la mayor distancia dictara el sentido del giro del robot, horario o antihorario. Mientras tanto el sensor ultrasónico dele frente tiene varias funciones, una de ellas es detectar la distancia entre el muro y el robot antes de dar vuelta en el desafío de vuelta libre, al detectar que está a 50 cm de la barrera el robot se detiene y procede a dar la vuelta. Otra de sus funciones es detectar la distancia entre el robot y un obstáculo en el desafío de obstáculos, cuando el robot se encuentra frente a menos de 15 cm de un obstáculo se detiene y gira en el sentido que el color indique. 
+
+Gestion de obtaculos
+===
+## Camara y su soporte
+Para realizar el desafio de obtaculos optamos por utilizar la raspberry pi camera. En este apartado se encontrara unicamnete como montamos la camara sobre nuestro vehiculo y los modelos de camara que hemos utilizado durante la temporada, para mas la informacion acerca de nuestra propuesta de solucion para esquivar los obstaculos y nuestro algoritmo consulte la carpeta [src.](/src)
+
+antes de usar la camara de raspberry, utilizabamos el modelo Night Vision Camera for Raspberry Pi - IR-CUT 5MP, y como su nombre lo indica es una camara de vion nocturna, al momento de probarla con la app OpenCV, la imagen era de con un filtro de color rojo y cuando cargabamos nuestro algoritmo de deteccion de colores no funcionaba. Al instante concluiamos que era por ese filtro, ya que en cualquier espacio donde probabamos nuestro codigo siempre mostraba valores diferentes y una de nuestras primeras soluciones fue aplicar un rango muy grande para cada color, verdy y rojo, esta solucion no funciono, ya que de igual manera no importaba en que espacio o salon nos encontrabamos siempre mostraba valores distintos, requeriamos de parametros muy especificos de luz y entorno y eso era un gran problema.
+
+Paras solucionar este problema, tuvimos que cambiar de camara al modelo que comentamos anteriormente. Este cambio fue practicamente la solucion a nuestro problema ya que el robot ya podia funcionar en distintos entornos y parametros. Como ya teniamos resuelto este problema, ya podiamos comenzar a diseñar un soporte para la camara y ensamblarlo en el robot. este soporte due creado 100% por nosotros, tomamos algunas ideas de otros robot de como lo podiamos implementar. 
+
+Cuando comenzamos a diseñarlo nos topamos con que la camara tenia que tener un cierto angulo de inclinacion para alcanazar a detectar los obstaculos dentro de cada cuadrante. Inicialmente propusimos un angulo de 45° hicimos el corte en MDF y nos percatamos en las pruebas que no era funcional debido a que el angulo de vision de la camara era muy pequeño y no podia detectar todos los obstaculos dentro de 1 cuadrante. Nuestar siguiente propuesta fue de 70° de inclinación y ese fue el grado correcto para que se alcanzaran a detectar los obstaculos de 1 cuadrante y ya con estas problematicas solucionadas, pudimos comenzar a trabajar en la resolucion de los diferentes casos para el desafio de obstaculos.
