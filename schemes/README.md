@@ -15,7 +15,7 @@ Inicialmente utilizábamos otro motor que ya tenía incluido un sistema diferenc
 
 Así se veía al inicio y nos permitía hacer pruebas sin embargo el motor no se fijaba de ninguna manera al soporte y eso generaba perturbaciones en nuestras pruebas. 
 
--[Soporte para motor Rev3](/models/S25_Soporte_y_Transmision_Rev3.STL) 
+-[Soporte para motor Rev3](/models/S25_Soporte_Motor_y_Transmision_Rev3.STL) 
 
 En la foto se puede ver la revisión actual del soporte en donde el motor ya se fija a este mismo y no genera las perturbaciones por el movimiento. Así mismo tuvimos un caso similar con el engrane que se conecta al motor. 
 
