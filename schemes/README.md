@@ -11,11 +11,11 @@ Escogimos este motor principalmente por el encoder ya incluido en el, ya que con
 
 Inicialmente utilizábamos otro motor que ya tenía incluido un sistema diferencial, era parte de un juguete de un carro RC, con ese motor participamos en la etapa regional de Mexicali. Hicimos el cambio de motor ya que la velocidad del motor variaba mucho y no teníamos un encoder y sumadas esas 2 variables hacia muy difícil mantener la constancia del movimiento del robot. Sabemos que es imposible hacer que un robot repita de manera exacta una rutina en varios intentos, pero ese componente nos dificultaba aun mas esta tarea. Por eso realizamos el cambio a un motor con encoder y el diferencial de lego, ya que nos permite tener más control sobre diferentes variables y parámetros anteriormente mencionados. Para eso tuvimos que diseñar un soporte para el motor en el que también pudiera conectarse junto con el diferencial de lego nos tomó 3 revisiones. 
 
-Imagen soporte rev1
+![IMG_Soporte_Motor_Rev1](IMG_Soporte_Motor_Rev1.jpeg)
 
 Así se veía al inicio y nos permitía hacer pruebas sin embargo el motor no se fijaba de ninguna manera al soporte y eso generaba perturbaciones en nuestras pruebas. 
 
-Imagen soporte rev3 
+-[Soporte para motor Rev3](/models/S25_Soporte_y_Transmision_Rev3.STL) 
 
 En la foto se puede ver la revisión actual del soporte en donde el motor ya se fija a este mismo y no genera las perturbaciones por el movimiento. Así mismo tuvimos un caso similar con el engrane que se conecta al motor. 
 
