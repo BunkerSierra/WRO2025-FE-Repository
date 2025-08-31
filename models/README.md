@@ -31,9 +31,23 @@ Inicialmente hicimos pruebas con un engrane Spur de 24 dientes de lego, taladram
 
 - Engrane Viejo:
 
+![IMG_Spur24D_Lego](IMG_Spur24D_Lego.jpeg)
+
 -[Engrane Nuevo](/models/S25_Spur_24D_Rev3.STL)
 
-## Dirección
+
+**Dirección** 
+
 Nuestra dirección funciona a partir de enlances que están conectados a manguetas y en el centro de una de las vigas de los enlaces hay una pieza que se conecta a un servomotor MG90S, el servomotor nos permite llevar la dirección a los ángulos que nosotros necesitamos dentro de nuestro algoritmo. Estos son diseños realizados por el equipo y para fabricarlos utilizamos MDF para los enlaces e impresión 3D para las manguetas.
-Foto de la dirección y sus piezas
+![IMG_Direccion_V1](IMG_Direccion_V1.jpeg)
+![IMG_Direccion_V2](IMG_Direccion_V2.jpeg)
+
+- **Piezas del sistema de direccíon:**
+  - [Conector del Servo a Viga 1](/models/S25_Conexion_Servo-enlace_Rev2.STL).
+  - [Viga 1](/models/S25_Enlace_Direccion_Rev5.STL).
+  - [Viga 2](/models/S25_Soporte_Servo_Rev4.STL).
+  - [Espaciadores](/models/S25_Rondana_Direccion_Rev1.STL).
+  - [Manguetas](/models/S25_Manguetas_Rev1.STL).
+ 
+
 Utilizamos llantas de lego, en especifico el modelo que tiene la medida 62.4mm ya que las hemos utilizado en competencias anteriores de la categoría robomission, confiamos mucho en ellas tanto por su agarre al suelo y poca fricción que generan.
