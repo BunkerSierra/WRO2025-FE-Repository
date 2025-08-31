@@ -9,7 +9,7 @@ Partes mecanicas
 El vehiculo consta de su chasis y y otros 2 pisos, cada uno de los pisos cuenta con diferentes compoenetes del robot:
 - **Chasis** Gesiton de movimiento del robot
   - Sistema de direccion, Motor de moviemto, Driver para motor y un Mini Protoboard.
-    [Vista de Chasis](/models/S25ChasisRev12.STL).
+    [Vista de Chasis](/models/S25_Chasis_Rev12.STL).
 - **Piso 1** Controladores del Robot
   - Arduino Mega, Raspberry Pi y camara
 
