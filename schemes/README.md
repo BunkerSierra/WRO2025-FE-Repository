@@ -46,6 +46,10 @@ Esto hizo que la implementación y pruebas de los sensores fuera un cambio acces
 
  Anteriormente mencionamos que contamos con 3 sensores ultrasónicos, 1 al frente del robot y los otros 2 se encentran a los costados, los sensores de los contados son principalmente utilizados para encontrar la dirección de giro del robot, una vez el robot sale del primer cuadrante (en ambos desafíos) siempre habrá un lado donde halla barrera y un lado que no tenga barrera, el sensor que detecte la mayor distancia dictara el sentido del giro del robot, horario o antihorario. Mientras tanto el sensor ultrasónico dele frente tiene varias funciones, una de ellas es detectar la distancia entre el muro y el robot antes de dar vuelta en el desafío de vuelta libre, al detectar que está a 50 cm de la barrera el robot se detiene y procede a dar la vuelta. Otra de sus funciones es detectar la distancia entre el robot y un obstáculo en el desafío de obstáculos, cuando el robot se encuentra frente a menos de 15 cm de un obstáculo se detiene y gira en el sentido que el color indique. 
 
+## HMI
+En el 3er piso del vehiculo se encuentra un mini proto (170p) donde contamos con 3 leds y un boton; En el chasis tambien esta montado un mini protoboard con un buzzer pasivo. En el desafio de vuelta libre utilizamos 1 de los LEDs para que al momeneto de poresionar nuestro boton de arranque del codigo se encienda el LED y el buzzer ejecuta un sonido y asi saber que esta corriendo el codigo. En el desafio de obstaculos dependiendo del caso que la camara detecto, se encienden diferentes LEDs segun el caso con la finalidad de tener un apoyo visual y asi sabaer si la camara detecto el caso correcto; Ademas el buzer ejecuta sonidos diferentes degun el caso.
+Cabe recalcar que el buzer genera un sonido al momento de detectar con los sensores ultrasonicos en todo momento.
+
 Gestion de obtaculos
 ===
 ## Camara y su soporte
