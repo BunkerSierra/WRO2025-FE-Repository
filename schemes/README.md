@@ -44,7 +44,7 @@ Cabe recalcar que el buzer genera un sonido al momento de detectar con los senso
 
 Gestion de obtaculos
 ===
-## Camara y su soporte
+## Camara
 Para realizar el desafio de obtaculos optamos por utilizar la raspberry pi camera. En este apartado se encontrara unicamnete como montamos la camara sobre nuestro vehiculo y los modelos de camara que hemos utilizado durante la temporada, para mas la informacion acerca de nuestra propuesta de solucion para esquivar los obstaculos y nuestro algoritmo consulte la carpeta [src.](/src)
 
 antes de usar la camara de raspberry, utilizabamos el modelo Night Vision Camera for Raspberry Pi - IR-CUT 5MP, y como su nombre lo indica es una camara de vion nocturna, al momento de probarla con la app OpenCV, la imagen era de con un filtro de color rojo y cuando cargabamos nuestro algoritmo de deteccion de colores no funcionaba. Al instante concluiamos que era por ese filtro, ya que en cualquier espacio donde probabamos nuestro codigo siempre mostraba valores diferentes y una de nuestras primeras soluciones fue aplicar un rango muy grande para cada color, verdy y rojo, esta solucion no funciono, ya que de igual manera no importaba en que espacio o salon nos encontrabamos siempre mostraba valores distintos, requeriamos de parametros muy especificos de luz y entorno y eso era un gran problema.
