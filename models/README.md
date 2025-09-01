@@ -38,7 +38,7 @@ Inicialmente hicimos pruebas con un engrane Spur de 24 dientes de lego, taladram
 
 ![IMG_Spur24D_Lego](IMG_Spur24D_Lego.jpeg)
 
--[Engrane propuesto por el equipo](/models/S25_Spur_24D_Rev3.STL)
+- [Engrane propuesto por el equipo](/models/S25_Spur_24D_Rev3.STL)
 
 
 **Dirección** 
@@ -56,8 +56,10 @@ Nuestra dirección funciona a partir de enlances que están conectados a manguet
  Este ultimo, fue impreso de 2 maneras, uno con el diseño original y otro espejeado.
 
 Utilizamos llantas de lego, en especifico el modelo que tiene la medida 62.4mm ya que las hemos utilizado en competencias anteriores de la categoría robomission, confiamos mucho en ellas tanto por su agarre al suelo y poca fricción que generan.
+![IMG_Llantas_62.4mm_Lego](IMG_Llantas_62.4mm_Lego.webp)
 
-## Gestion de Movilidad
+
+## Gestion de Obstaculos
 Para realizar el soporte para nuestra camara lo separamos en las siguientes partes:
   - [Soporte para Poste](/models/S25_Soporte_Poste_Camara_Rev1.STL).
   - [Poste](/models/S25_Poste_Camara_Rev1.STL).
@@ -65,6 +67,3 @@ Para realizar el soporte para nuestra camara lo separamos en las siguientes part
   - [Union de 70 grados](/models/S25_Union_70_grados_Camara_Rev1.STL).
 
 La altura de nuestra camara es la necesaria para que el robot alcance a detectar los objetos en la pista, en nuestro caso por el algoritmo que diseñamos solamente es necesario que detecte los obstaculos que puede haber en 1 cuadrante de la pista. Ademas la union del soporte de la camara al poste tiene una inclinacíon de 70°, ya que si lo dejabamos en 90°(ortogonalmente), no alcanzaba a detectar los objetos necesarios. Inicialmente propusimos un angulo de 45° de inclinacíon pero la imagen de la camara volteaba a ver unicamente el suelo y eso hacia que detectara los obstaculos muy tarde,  por esa razon cambiamos el grado de inclinacion a 70°. Nos gustaria aclarar que esto fue hecho a partir de prueba y error. no utilizamos un calculo para encontar el grado de inclinacion correcto.
-
-
-
