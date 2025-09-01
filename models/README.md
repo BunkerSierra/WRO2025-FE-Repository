@@ -2,7 +2,7 @@ Modelos
 ===
 En este apartado se encuentran los diseños y modelos 3d de las partes mecanicas que componen el robot junto con la explicacion y justificacíon de su uso, para informacíon acerca de las piezas y su relación con los componentes electricos revisar por favor carpeta [schemes](/schemes/README.md).
 
-Partes mecanicas
+Partes Mecánicas
 ===
 Un dato que consideramos recalcar es que la mayoria de las partes mecanicas las mandamos a hacer en corte laser, y otra pequeña seccion de piezas, en su mayoria del sistema de direccíon, las mandamos a imprimir en 3D.
 
@@ -25,6 +25,11 @@ Como se puede notar, en los nombres de archivo de todos los modelos se menciona 
 
 Esta parte mecanica al estar relacionada a un componente electrico, su explicacíon se encuentra en [schemes](/schemes/README.md)
 
+**Soprte para Ejes del Motor**
+
+El eje de salida de nuestro motor son axles de lego que estan conectados a nuestras llantas, por ende tuvimos que diseñar un soporte para estos ejes por que sin ellos los ejes se pandeaban y eso generaba una fuerza extra en el eje Z para el motor y cada prueba que haciamos se comportaba de manera diferente. Una vez que los soportes se implementaron en el robot los ejes de mantenian en un angulo de 180°
+- [Soporte para ejes](/models/S25_Soporte_Eje_Motor_Rev1.STL).
+
 **Engrane Spur 24D**
 
 Inicialmente hicimos pruebas con un engrane Spur de 24 dientes de lego, taladramos el centro del engrane para que entrara en el eje principal del motor e inicialmente eso nos ayudo par ver como se comportaría el sistema diferencial. Sin embargo, no podíamos quedarnos con eso ya que con el desgate generado por el uso, el agujero driver se terminaba deformando y tenía un backlash bastante considerable. Usando la misma medida de lego realizamos un diseño de un engrane igual, pero con las medidas de nuestro eje principal.
@@ -33,7 +38,7 @@ Inicialmente hicimos pruebas con un engrane Spur de 24 dientes de lego, taladram
 
 ![IMG_Spur24D_Lego](IMG_Spur24D_Lego.jpeg)
 
--[Engrane Nuevo](/models/S25_Spur_24D_Rev3.STL)
+-[Engrane propuesto por el equipo](/models/S25_Spur_24D_Rev3.STL)
 
 
 **Dirección** 
@@ -47,7 +52,19 @@ Nuestra dirección funciona a partir de enlances que están conectados a manguet
   - [Viga 1](/models/S25_Enlace_Direccion_Rev5.STL).
   - [Viga 2](/models/S25_Soporte_Servo_Rev4.STL).
   - [Espaciadores](/models/S25_Rondana_Direccion_Rev1.STL).
-  - [Manguetas](/models/S25_Manguetas_Rev1.STL).
- 
+  - [Manguetas](/models/S25_Mangueta_Rev1.STL).
+ Este ultimo, fue impreso de 2 maneras, uno con el diseño original y otro espejeado.
 
 Utilizamos llantas de lego, en especifico el modelo que tiene la medida 62.4mm ya que las hemos utilizado en competencias anteriores de la categoría robomission, confiamos mucho en ellas tanto por su agarre al suelo y poca fricción que generan.
+
+## Gestion de Movilidad
+Para realizar el soporte para nuestra camara lo separamos en las siguientes partes:
+  - [Soporte para Poste](/models/S25_Soporte_Poste_Camara_Rev1.STL).
+  - [Poste](/models/S25_Poste_Camara_Rev1.STL).
+  - [Soporte para camara](/models/S25_Soporte_Camara_Rev1.STL).
+  - [Union de 70 grados](/models/S25_Union_70_grados_Camara_Rev1.STL).
+
+La altura de nuestra camara es la necesaria para que el robot alcance a detectar los objetos en la pista, en nuestro caso por el algoritmo que diseñamos solamente es necesario que detecte los obstaculos que puede haber en 1 cuadrante de la pista. Ademas la union del soporte de la camara al poste tiene una inclinacíon de 70°, ya que si lo dejabamos en 90°(ortogonalmente), no alcanzaba a detectar los objetos necesarios. Inicialmente propusimos un angulo de 45° de inclinacíon pero la imagen de la camara volteaba a ver unicamente el suelo y eso hacia que detectara los obstaculos muy tarde,  por esa razon cambiamos el grado de inclinacion a 70°. Nos gustaria aclarar que esto fue hecho a partir de prueba y error. no utilizamos un calculo para encontar el grado de inclinacion correcto.
+
+
+
