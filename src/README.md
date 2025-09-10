@@ -12,3 +12,4 @@ Para saber cuanto se ha movido el robot, utilizamos el encoder que se encuentra 
 
 Realizamos un software de control PID para que el robot avnce la cantidad de pulsos que le indicamos, con el control PID nos aeguramos de que el robot no le falte o supere una gran cantidad de pulsos y asi mantener mas constancia en las pruebas que realizamos con nustro vehiculo. Hasta el momento hemos logrado mantenerlo en un rango de ±4 pulsos. El software esta incorportarado tanto en el desafio de vulta libre tanto en el de obstaculos.
 
+ [Schemes](/src/S25_Obstaculos_29_08_2025/Casos.ino).
