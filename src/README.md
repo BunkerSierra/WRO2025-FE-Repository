@@ -17,8 +17,17 @@ Realizamos un software de control PID para que el robot avance la cantidad de pu
 
 - [CTRL_POS](/src/CTRL_POS.ino).
 
+
 **Girosensor**
 
+El uso de este sensor es fundamental para el funcionamiento de nuestro vehiculo, tiene unicamente 2 objetivos pero son muy importantes:
+
+1. Avanzar derecho **(Ambos desafíos)**.
+2. Dar vueltas.
+
+1- Para que el robot siga una trayectoria y no se desvie mucho de ella, utilizamos un sistema de control PD para que el robot se mantenga en el angulo 0° del eje Z del giroscopio, utilizamos un Acelerometro/Giroscopio MPU6050, para mantenerse en el mismo angulo el sistema de control ajusta la direccion con el servomotor, esto quiere decir que si se desvia el sistema de direccion del robot gira en sentido contrario de la desviación y esto permite que el robot se mantenga centrado. Como es de esperarse no siempre se mantiene paralelo a la trayectoria, cuando recorre distancias muy largas hay una desviacion no mayor a 2° grados, pero se mantiene dentro de nuestras tolereancias marcadas. 
+
+2- todas las vueltas que el robot hace dentro de la pista son en base al girosensor, Hace falta aclarar que para dar vueltas la direccion del robot se mueve hasta el punto maximo que puede llegar (Izquierda o Derecha), no ajustamos la direccion en posiciones diferentes ya que habrian muchas mas variables a considerar al momento de dar vueltas. Una vez que la direccion este en su posición para dar vuelta, el vehiculo avanza hats que llegue al agrado indicado en el girosensor, cuando se detiene regresa la direccion al centro y el robot continua con la rutina.
 
 
 ## Sensores Ultrasonicos
