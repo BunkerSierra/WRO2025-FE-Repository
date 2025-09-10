@@ -58,3 +58,22 @@ A continuacion se explicaran cada uno de los objetivos de los sensores laterales
 4. El nombre de este objetivo es muy claro, no hay mayor explicacion fuera de que cuando el robot termina las 3 vueltas utilizamos uno de los sensores laterales (depende del sentido de giro) para detectar una de las limitaciones de aparcamiento para iniciar con la rutina para aparcarse.
 
    
+## Manejo de obstaculos 
+
+**Algoritmo**
+
+En las reglas de la categoria se hace mención de los 36 casos posibles de posicion obstaculos, para resolver este desafío primero discutimos entre equipo cual seria la mejor opcion para resolverlo, ya que antes de programar se tiene que plantear la poblematica de manera correcta. Despues de varias horas de discusión, llegamos a la siguiente solucion: los casos de poscion de pueden simplificar a unicamente 4 casos 
+
+- Rojo
+- Verde
+- Verde - Rojo
+- Rojo - Verde
+
+independientemente de el espacio donde se encuentren los casos se reducen a simplemente 4 configuraciones por cuadrante, entonces nuestra solucion es programar la rutina de los 4 casos y al terminar de esquivar los obstaculos por cuadrante el robot se posiciona para detectar los obstaculos del siguiente cuadrante. Esto se repite en bucle hasta haber completado las 3 vueltas.
+
+**Programa para Detección de Objetos y Colores**
+
+Nuestro programa de cámara divide la visión de la pantalla por zonas y resalta el contorno de los obstáculos, ignorando contornos más pequeños al área que abarcan los obstáculos; cambia el valor de una variable dependiendo del color del obstáculo que detecte frente a él. Y seleccona el caso dependiendo de el color y la poscion de los objetos. Para determinar la posición de los obstaculos utilizamos los pixeles de la camara en el eje Y, dependiendo en que pixel se encuentren y el color del contorno de los objetos se determina el caso.
+
+Como el robot usa Raspberry y Arduino, la forma en que manda estos valores la cámara al Arduino, es por medio del puerto serial, imprimiendo el valor y mandándolo al Arduino, el cual hace una acción dependiendo del valor obtenido. Para vizualizar de una manera mas sencilla si se detecto el caso correcto, el robot cuenta con 4 LED's y se encienden (1 por caso) dependiendo del caso que se detecto. Como extra genera diferntes frecuencias de sonido sugun el caso.
+
