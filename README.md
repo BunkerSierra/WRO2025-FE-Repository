@@ -11,8 +11,8 @@ Partes electricas:
 -	Arduino Mega 2650
 -	Raspberry pi 4 model b (1GB RAM)
 -	Raspberry pi cámara rev1.3
--	Motor driver IMS-2 WINGXINE
--	Regulador de voltaje 
+-	Motor driver IMS-2 WINGXINE - Actualización (20/08/2025): Puente H TB6612FNG
+-	Regulador de voltaje LM2596 modulo StepDown
 -	Motor DC 12v con encoder GA37-520
 -	Servomotor MG90S
 -	3 sensores ultrasónicos HC-SR04P
@@ -25,9 +25,9 @@ Partes electricas:
 Partes Mecánicas:
 -	Chasis MDF x3
 -	Sistema de dirección con enlaces de MDF
--	Llantas Lego
+-	Llantas Lego 62.4 mm * 20 mm X 4
 -	Soprte para Motor Impreso en 3d
 -	Engrane diferencial Lego
 -	Engrane Spur 24 dientes Impreso en 3d
--	Piezas Lego
+-	Piezas Lego Technic
 
