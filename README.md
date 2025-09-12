@@ -1,4 +1,4 @@
-## Introduccíon
+## Introducción
 Bunker Sierra – WRO Future Engenieers 2025
 Somos un equipo de Baja California, México Integrado por 2 personas: Diego Alejandro Salas Dáaz y Jacobo Arteaga Castañeda por parte de la escuela Bunker Robotics. Ambos integrantes contamos con experiencia de otras competencias de la categoria Robomission, para ser especifico 8 años de experiencia.
 
