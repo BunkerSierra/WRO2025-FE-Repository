@@ -3,6 +3,9 @@ Diagramas Electricos
 
 En esta sección, se presentaran los diagramas eléctricos de todos los componentes eléctricos y una descripción de su funcionamiento. Ademas se desglosara el hardware del robot y como se conecta con las piezas mecánicas del robot, todos los modelos y diseños 3d mencionados en este aprtado se encuentran disponibles en la carpeta [models](/models).
 
+- **Diagrama Electrico General del Vehiculo:**
+![DE-S25_bb](DE-S25_bb.jpg)
+
 Manejo de Movilidad
 ===
 ## Motor DC 12v con encoder 
