@@ -3,8 +3,48 @@ Diagramas Electricos
 
 En esta sección, se presentaran los diagramas eléctricos de todos los componentes eléctricos y una descripción de su funcionamiento. Ademas se desglosara el hardware del robot y como se conecta con las piezas mecánicas del robot, todos los modelos y diseños 3d mencionados en este aprtado se encuentran disponibles en la carpeta [models](/models).
 
-- **Diagrama Electrico General del Vehiculo:**
+## Diagrama Electrico General del Vehiculo: 
+
 ![DE-S25_bb](DE-S25_bb.jpg)
+
+Especificaciones: La placa ***arduino MEGA*** es alimentada directamente del puerto de comunicación serial de la computadora ***RaspBerry pi 4***, y esta ultima es alimentada desde nuestro regulador de voltaje ***LM2596 a 5.1volts a 3 amperes***. Si ajustamos el regulador a exactamente 5 volts el RaspBerry suele tener problemas de alimentación, por esa razón es que esta regulado a 5.1v.
+
+
+## Diagramas Eléctricos de Cada Componente y Sensor Vehiculo:
+
+
+Aclaraciones: En los siguientes diagramas se muestra las conexiones de los puertos de señal de cada uno de los sensores y componentes eléctricos, UNICAMENTE los diagramas de conexión de ***Potencia*** y ***Motor con Motor Driver*** cuentan con las conexiones de alimentación ya que son indespensables que se hagan de la misma manera si se desea replicar el robot. Los otros diagramas no lo muestran ya que se puede dejar a libertad de otros equipos realizarlo de otras maneras, sin embargo sí se desea realizar exactamente como nosotros lo hizimos pueden consultar el **Diagrama Electrico General del Vehiculo** dentro de ete mismo apartado.
+
+
+- **Sensores Ultrasonicos**
+  
+![IMG-DE_SUS](IMG-DE_SUS.jpg)
+
+
+- **Acelerometro/Giroscopio GY-521**
+  
+![IMG-DE_Gyro](IMG-DE_Gyro.jpg)
+
+
+- **Servo Motor**
+  
+![IMG-DE_Servo](IMG-DE_Servo.jpg)
+
+
+- **Human Machine Interface**
+  
+![IMG-DE_HMI](IMG-DE_HMI.png)
+
+
+- **Motor 12v - Motor Driver**
+  
+![IMG-DE_Motor_MDirver](IMG-DE_Motor_MDirver.png)
+
+
+- **Etapa de Potencia y Raspberry pi 4**
+  
+![IMG-DE_Potencia](IMG-DE_Potencia.jpg)
+
 
 Manejo de Movilidad
 ===
