@@ -71,7 +71,7 @@ A continuacion se explicaran cada uno de los objetivos de los sensores laterales
 
 **Algoritmo**
 
-En las reglas de la categoria se hace mención de los 36 casos posibles de posicion obstaculos, para resolver este desafío primero discutimos entre equipo cual seria la mejor opcion para resolverlo, ya que antes de programar se tiene que plantear la poblematica de manera correcta. Despues de varias horas de discusión, llegamos a la siguiente solucion: los casos de poscion de pueden simplificar a unicamente 4 casos 
+En las reglas de la categoria se hace mención de los 36 casos posibles de posicion obstaculos, para resolver este desafío primero discutimos entre equipo cual seria la mejor opcion para resolverlo, ya que antes de programar se tiene que plantear la poblematica de manera correcta. Despues de varias horas de discusión, llegamos a la siguiente solucion: los casos de posición se pueden simplificar a unicamente 4 casos 
 
 - Rojo
 - Verde
