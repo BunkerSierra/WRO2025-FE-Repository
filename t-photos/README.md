@@ -13,6 +13,6 @@ Jacobo Arteaga Castañeda - Diego Alejandro Salas Díaz - Andrea Perez Bueno(Coa
 
 - **Foto de JUBILO**
   
-En la foto se pueden apreciar el nacimiento de nuestro robot:)
+En la foto se puede apreciar el nacimiento de nuestro robot:)
 
 ![IMG-FunnyP](IMG-FunnyP.jpeg)
