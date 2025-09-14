@@ -1,6 +1,6 @@
 Modelos 
 ===
-En este apartado se encuentran los diseños y modelos 3d de las partes mecanicas que componen el robot junto con la explicacion y justificacíon de su uso, para informacíon acerca de las piezas y su relación con los componentes electricos revisar por favor carpeta [schemes](/schemes/README.md).
+En este apartado se encuentran los diseños y modelos 3d de las partes mecanicas que componen el robot junto con la explicación y justificación de su uso, para información acerca de las piezas y su relación con los componentes electricos revisar por favor carpeta [schemes](/schemes/README.md).
 
 Partes Mecánicas
 ===
@@ -18,21 +18,32 @@ El vehiculo consta de su chasis y y otros 2 pisos, cada uno de los pisos cuenta 
   - Mini Protoboard con HMI y Girosensor.
   - [Vista de Piso 2](/models/S25_Piso3_Rev1.STL).
  
-Como se puede notar, en los nombres de archivo de todos los modelos se menciona la revisíon de cada parte mecanica, por ejemplo el chasis lleva 12 revisones, esto por cada uno de los cambios que hemos necesitado durante la temporada. Es la parte que más ha cambiado, en otras secciones del repositorio hemos mencionado que nuestro robot era muy distinto durante la etapa regional a como se ve actualmente para la etapa nacional y ese el principal motivo por el cual la pieza ha cambiado tanto, a partir de la Rev8, es cuando comienza a verse como es actualmente.
+Como se puede notar, en los nombres de archivo de todos los modelos se menciona la revisión de cada parte mecanica, por ejemplo el chasis lleva 12 revisiones, esto por cada uno de los cambios que hemos necesitado durante la temporada. Es la parte que más ha cambiado, en otras secciones del repositorio hemos mencionado que nuestro robot era muy distinto durante la etapa regional a como se ve actualmente para la etapa nacional y ese el principal motivo por el cual la pieza ha cambiado tanto, a partir de la Rev8, es cuando comienza a verse como es actualmente.
 
-## Gestion de Movilidad
-**Soprte para Motor**
+**Actualización 14/09/2025**
+
+Nos vimos en la necesidad de hacer un cambio en el chasis de nuestro robot: aparte de reacomodar algunos componentes como el regulador de voltaje y el mini proto(detalles esteticos), tuvimos que añadir un cuarto portabaterías a nuestro robot. En el desafío de obstaculos, cuando el Raspberry esta encendido consume una cantidad exhuberante de voltaje, con 1 sola vuelta del desafio el robot consume 0.08v. Nuestra solución consistió en añadir un cuarto portabaterías en paralelo. Esto incrementa la capacidad total (en amperios-hora), lo que le da al robot más autonomía para operar, manteniendo el mismo voltaje. 
+
+Para mantener los portabaterias en su posición diseñamos otra pieza (hay 2 en el robot) que es capaz de sostener 2 portabaterias a la vez, aqui se puede apreciar la pieza:
+
+
+## Gestión de Movilidad
+**Soporte para Motor**
 
 Esta parte mecanica al estar relacionada a un componente electrico, su explicacíon se encuentra en [schemes](/schemes/README.md)
 
-**Soprte para Ejes del Motor**
+**Soporte para Ejes del Motor**
 
-El eje de salida de nuestro motor son axles de lego que estan conectados a nuestras llantas, por ende tuvimos que diseñar un soporte para estos ejes por que sin ellos los ejes se pandeaban y eso generaba una fuerza extra en el eje Z para el motor y cada prueba que haciamos se comportaba de manera diferente. Una vez que los soportes se implementaron en el robot los ejes de mantenian en un angulo de 180°
+El eje de salida de nuestro motor se acopla a ejes (axles) LEGO que están conectados directamente a las llantas. Durante las primeras pruebas, notamos que estos ejes se pandeaban, lo que generaba una fuerza adicional no deseada en el eje Z del motor y provocaba un comportamiento inconsistente en cada prueba.
+
+Como solución, diseñamos e implementamos un soporte personalizado para estos ejes. Una vez instalados, los ejes se mantienen perfectamente alineados en un ángulo de **180°**, eliminando el pandeo y garantizando un comportamiento uniforme y predecible.
 - [Soporte para ejes](/models/S25_Soporte_Eje_Motor_Rev1.STL).
 
 **Engrane Spur 24D**
 
-Inicialmente hicimos pruebas con un engrane Spur de 24 dientes de lego, taladramos el centro del engrane para que entrara en el eje principal del motor e inicialmente eso nos ayudo par ver como se comportaría el sistema diferencial. Sin embargo, no podíamos quedarnos con eso ya que con el desgate generado por el uso, el agujero driver se terminaba deformando y tenía un backlash bastante considerable. Usando la misma medida de lego realizamos un diseño de un engrane igual, pero con las medidas de nuestro eje principal.
+Inicialmente, utilizamos un engrane Spur LEGO de 24 dientes al que taladramos el centro para que calzara en el eje principal del motor. Esto nos permitió validar el comportamiento del sistema diferencial.
+
+Sin embargo, esta solución provisional presentaba dos problemas críticos: el desgaste por uso deformaba rápidamente el agujero y generaba un **backlash** (juego) considerable. Para resolverlo, diseñamos nuestro propio engrane manteniendo las dimensiones estándar de LEGO pero con el diámetro interior exacto de nuestro eje, asegurando un ajuste perfecto y eliminando el juego.
 
 - Engrane Viejo:
 
@@ -43,11 +54,14 @@ Inicialmente hicimos pruebas con un engrane Spur de 24 dientes de lego, taladram
 
 **Dirección** 
 
-Nuestra dirección funciona a partir de enlances que están conectados a manguetas y en el centro de una de las vigas de los enlaces hay una pieza que se conecta a un servomotor MG90S, el servomotor nos permite llevar la dirección a los ángulos que nosotros necesitamos dentro de nuestro algoritmo. Estos son diseños realizados por el equipo y para fabricarlos utilizamos MDF para los enlaces e impresión 3D para las manguetas.
+Nuestro sistema de dirección funciona mediante un mecanismo de **enlaces** conectados a las **manguetas**. En el centro de uno de estos enlaces, una pieza personalizada se conecta directamente a un servomotor **MG90S**, que nos permite posicionar la dirección con precisión en los ángulos específicos que requiere nuestro algoritmo de navegación.
+
+Los enlaces fueron fabricados en **MDF** por su rigidez y bajo peso, mientras que las manguetas y conectores se imprimieron en 3D para lograr geometrías complejas y un peso reducido.
+
 ![IMG_Direccion_V1](IMG_Direccion_V1.jpeg)
 ![IMG_Direccion_V2](IMG_Direccion_V2.jpeg)
 
-- **Piezas del sistema de direccíon:**
+- **Piezas del sistema de dirección:**
   - [Conector del Servo a Viga 1](/models/S25_Conexion_Servo-enlace_Rev2.STL).
   - [Viga 1](/models/S25_Enlace_Direccion_Rev5.STL).
   - [Viga 2](/models/S25_Soporte_Servo_Rev4.STL).
@@ -55,19 +69,44 @@ Nuestra dirección funciona a partir de enlances que están conectados a manguet
   - [Manguetas](/models/S25_Mangueta_Rev1.STL).
  Este ultimo, fue impreso de 2 maneras, uno con el diseño original y otro espejeado.
 
-Utilizamos llantas de lego, en especifico el modelo que tiene la medida 62.4mm ya que las hemos utilizado en competencias anteriores de la categoría robomission, confiamos mucho en ellas tanto por su agarre al suelo y poca fricción que generan.
+
+**Llantas**
+
+Utilizamos llantas LEGO del modelo **62.4mm** debido a nuestra experiencia positiva con ellas en competencias previas de Robomission. Confiamos en su excelente **agarre** y la **baja fricción** que generan, lo cual es crucial para la eficiencia energética y la tracción del robot.
 ![IMG_Llantas_62.4mm_Lego](IMG_Llantas_62.4mm_Lego.webp)
 
 
 ## Gestion de Obstaculos
-Para realizar el soporte para nuestra camara lo separamos en las siguientes partes:
+
+**Soporte para Cámara**
+
+El sistema de visión se compone de varias partes personalizadas:
+
+
   - [Soporte para Poste](/models/S25_Soporte_Poste_Camara_Rev1.STL).
   - [Poste](/models/S25_Poste_Camara_Rev1.STL).
   - [Soporte para camara](/models/S25_Soporte_Camara_Rev1.STL).
   - [Union de 70 grados](/models/S25_Union_70_grados_Camara_Rev1.STL).
 
-La altura de nuestra camara es la necesaria para que el robot alcance a detectar los objetos en la pista, en nuestro caso por el algoritmo que diseñamos solamente es necesario que detecte los obstaculos que puede haber en 1 cuadrante de la pista. Ademas la union del soporte de la camara al poste tiene una inclinacíon de 70°, ya que si lo dejabamos en 90°(ortogonalmente), no alcanzaba a detectar los objetos necesarios. Inicialmente propusimos un angulo de 45° de inclinacíon pero la imagen de la camara volteaba a ver unicamente el suelo y eso hacia que detectara los obstaculos muy tarde,  por esa razon cambiamos el grado de inclinacion a 70°. Nos gustaria aclarar que esto fue hecho a partir de prueba y error. no utilizamos un calculo para encontar el grado de inclinacion correcto. 
+La **altura** y la **inclinación** de la cámara son críticas para nuestro algoritmo. La configuración debe permitir al robot detectar obstáculos dentro de un cuadrante específico de la pista.
+
+- Una inclinación de **90°** (vertical) no permitía una detección temprana.
+
+- Una inclinación inicial de **45°** apuntaba la cámara demasiado hacia el suelo, detectando los obstáculos demasiado tarde.
+
+- Tras un proceso de **prueba y error**, determinamos que un ángulo de **70°** era el óptimo para nuestro caso de uso, ya que proporciona el campo de visión necesario para una detección oportuna y confiable.
+  
 
 ***Actualización 07/09/2025***
 
 Cambiamos el angulo del soporte para la camara a 63° y subimos la altura del soprte 1/8", anteriormente con las especificaciones que mencionabamos el robot tenia un margen de error muy bajo para posicionarce frente a los obstaculos y fallaba al momento de detectar la posicion y color de los obstaculos.
+
+**Optimización del Ángulo y Altura de la Cámara**
+
+Para mejorar la confiabilidad en la detección de la posición y el color de los obstáculos, ajustamos la configuración:
+
+- **Ángulo de inclinación:** Cambiado de **70°** a **63°**.
+
+- **Altura del soporte:** Aumentada en **1/8 de pulgada**.
+
+La configuración anterior, aunque funcional, dejaba un **margen de error muy bajo** para que el robot se posicionara correctamente frente a los obstáculos. Estos ajustes finos incrementaron significativamente la tasa de éxito de la detección y el posicionamiento.
