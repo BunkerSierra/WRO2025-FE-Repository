@@ -1,19 +1,19 @@
 Diagramas Electricos
 ====
 
-En esta sección, se presentaran los diagramas eléctricos de todos los componentes eléctricos y una descripción de su funcionamiento. Ademas se desglosara el hardware del robot y como se conecta con las piezas mecánicas del robot, todos los modelos y diseños 3d mencionados en este aprtado se encuentran disponibles en la carpeta [models](/models).
+En esta sección se presentan los diagramas eléctricos de todos los componentes y una descripción de su funcionamiento. Además, se desglosa el hardware del robot y su conexión con las piezas mecánicas. Todos los modelos y diseños 3D mencionados aquí están disponibles en la carpeta [models](/models).
 
 ## Diagrama Electrico General del Vehiculo: 
 
 ![DE-S25_bb](DE-S25_bb.jpg)
 
-Especificaciones: La placa ***arduino MEGA*** es alimentada directamente del puerto de comunicación serial de la computadora ***RaspBerry pi 4***, y esta ultima es alimentada desde nuestro regulador de voltaje ***LM2596 a 5.1volts a 3 amperes***. Si ajustamos el regulador a exactamente 5 volts el RaspBerry suele tener problemas de alimentación, por esa razón es que esta regulado a 5.1v.
+***Especificaciones:*** La placa **Arduino MEGA** es alimentada directamente desde el puerto de comunicación serial de la computadora **Raspberry Pi 4**. Esta última, a su vez, es alimentada por nuestro regulador de voltaje **LM2596**, configurado a **5.1V** y **3A**. Ajustamos el regulador a 5.1V porque al configurarlo exactamente a 5V, la Raspberry Pi solía presentar problemas de alimentación.
 
 
 ## Diagramas Eléctricos de Cada Componente y Sensor Vehiculo:
 
 
-Aclaraciones: En los siguientes diagramas se muestra las conexiones de los puertos de señal de cada uno de los sensores y componentes eléctricos, UNICAMENTE los diagramas de conexión de ***Potencia*** y ***Motor con Motor Driver*** cuentan con las conexiones de alimentación ya que son indespensables que se hagan de la misma manera si se desea replicar el robot. Los otros diagramas no lo muestran ya que se puede dejar a libertad de otros equipos realizarlo de otras maneras, sin embargo sí se desea realizar exactamente como nosotros lo hizimos pueden consultar el **Diagrama Electrico General del Vehiculo** dentro de ete mismo apartado.
+***Aclaración:*** Los siguientes diagramas muestran las conexiones de señal de cada sensor y componente eléctrico. **Únicamente** los diagramas de **Potencia** y **Motor con Motor Driver** incluyen las conexiones de alimentación, ya que son indispensables para replicar el robot. Los demás diagramas omiten estas conexiones para permitir flexibilidad a otros equipos, pero pueden consultarse en el **Diagrama Eléctrico General** mostrado arriba.
 
 
 - **Sensores Ultrasonicos**
@@ -49,24 +49,26 @@ Aclaraciones: En los siguientes diagramas se muestra las conexiones de los puert
 Manejo de Movilidad
 ===
 ## Motor DC 12v con encoder 
-Escogimos este motor principalmente por el encoder ya incluido en el, ya que con este sensor podemos conocer la posición del robot y ese dato nos aporta varios beneficios en nuestra solución: nos permite conocer cuantas vueltas ha dado, la distancia que se ha desplazado el robot, ayudarnos a estacionarnos en paralelo, en general todas las variables que estén relacionadas con la posición del robot. 
+Elegimos este motor principalmente por el **encoder integrado**. Este sensor nos permite conocer la posición del robot, lo que aporta múltiples beneficios a nuestra solución: calcular la cantidad de vueltas, la distancia recorrida, asistir en el estacionamiento en paralelo y, en general, todas las variables relacionadas con la posición.
+
 ![IMG-Motor12v](IMG-Motor12v.jpg)
 
-Inicialmente utilizábamos otro motor que ya tenía incluido un sistema diferencial, era parte de un juguete de un carro RC, con ese motor participamos en la etapa regional de Mexicali. Hicimos el cambio de motor ya que la velocidad del motor variaba mucho y no teníamos un encoder y sumadas esas 2 variables hacia muy difícil mantener la constancia del movimiento del robot. Sabemos que es imposible hacer que un robot repita de manera exacta una rutina en varios intentos, pero ese componente nos dificultaba aun mas esta tarea. Por eso realizamos el cambio a un motor con encoder y el diferencial de lego, ya que nos permite tener más control sobre diferentes variables y parámetros anteriormente mencionados. Para eso tuvimos que diseñar un soporte para el motor en el que también pudiera conectarse junto con el diferencial de lego nos tomó 3 revisiones. 
+Inicialmente, utilizábamos un motor de un juguete RC que incluía un diferencial. Con ese motor participamos en la etapa regional de Mexicali. Decidimos cambiarlo porque la velocidad variaba demasiado y la falta de un encoder hacía muy difícil mantener la consistencia en los movimientos. Sabemos que es imposible que un robot repita una rutina de manera exacta, pero ese componente lo dificultaba aún más. El cambio a un motor con encoder y un diferencial LEGO nos da un control mucho mayor sobre estas variables. Para lograrlo, diseñamos un soporte que acoplara el motor al diferencial LEGO, el cual pasó por 3 revisiones.
 
 ![IMG_Soporte_Motor_Rev1](IMG_Soporte_Motor_Rev1.jpeg)
 
-Así se veía al inicio y nos permitía hacer pruebas sin embargo el motor no se fijaba de ninguna manera al soporte y eso generaba perturbaciones en nuestras pruebas. 
+*Así se veía la primera versión. Permitía pruebas básicas, pero el motor no estaba fijado al soporte, lo que generaba perturbaciones.*
 
 -[Soporte para motor Rev3](/models/S25_Soporte_Motor_y_Transmision_Rev3.STL) 
 
-En la foto se puede ver la revisión actual del soporte en donde el motor ya se fija a este mismo y no genera las perturbaciones por el movimiento. Así mismo tuvimos un caso similar con el engrane que se conecta al motor. 
+*En la revisión actual, el motor está firmemente fijado al soporte, eliminando las perturbaciones por movimiento*. Así mismo tuvimos un caso similar con el engrane que se conecta al motor. 
 
 ## Movimiento 
-Para hacer que el robot se mueva derecho utilizamos un girosensor con un controlador PD, este nos permite hacer que el robot mantenga su posición al avanzar, como anteriormente hemos mencionado es imposible que el robot siempre se mantenga derecho, pero con este programa y sensor podemos hacer que el robot mantenga su posición por una buena cantidad de distancia y su desviación es muy pequeña , nunca superando los 2° del punto inicial(Tomando en cuenta que el orígen es de 0°). 
+Para que el robot avance en línea recta, utilizamos un **girosensor con un controlador PD**. Esto permite que el robot mantenga su rumbo. Como se ha mencionado, es imposible que sea perfecto, pero con este sistema la desviación es mínima, **nunca superando los 2°** desde el punto inicial (considerando 0° como el origen).
+
 ![IMG_Offset](IMG_Offset.jpeg)
 
-De igual manera utilizamos el Girosensor para las vueltas del robot, al momento de llegar al punto deseado el robot gira la dirección y el robot avanza hasta detectar el ángulo deseado, cuando llega al ángulo marcado detiene el motor y regresa la dirección a la posición original. 
+De igual manera, utilizamos el girosensor para los giros del robot. Al llegar al punto deseado, el robot gira las ruedas y avanza hasta detectar el ángulo objetivo. Una vez alcanzado, detiene los motores y vuelve la dirección a la posición neutral.
 
 ![IMG_GiroSensor](IMG_GiroSensor.jpg)
 
@@ -74,34 +76,47 @@ Gestión de Potencia y los Sentidos
 ====
 
 ## Energía
-El robot utiliza baterías de 3.7v a 9900mAh(18650), en total usa 6 baterías y están divididas en 3 portabaterias conectados en paralelo, esto ultimo para administra de manera eficiente la corriente del robot. El voltaje máximo del robot es de 8.4v.
-Para entregarle la energía suficiente a nuestra computadora gráfica, el RaspBerry pi 4, utilizamos un regulador de voltaje regulado a 5.1v. Esto permite que la placa pueda funcionar correctamente sin la necesidad de conectarlo a un tomacorriente, cabe recalcar que al inicio nuestras pruebas para la gestión de obstáculos las realizábamos de esa manera, con el RaspBerry conectado a un tomacorriente al inicio esto nos permitió ver el comportamiento de nuestro código, pero a futuro era obvio que teníamos solucionar este problema ya que el robot no puede estar conectado a un tomacorriente durante las pruebas;).
+El robot utiliza **6 baterías de 3.7V y 9900mAh (18650)**. Están divididas en *4 portabaterías conectados en paralelo** para administrar la corriente de manera eficiente. El voltaje máximo del sistema es de **8.4V**.
+
+Para alimentar nuestra computadora **Raspberry Pi 4**, utilizamos un **regulador de voltaje LM2596 ajustado a 5.1V**. Esto permite que la placa funcione correctamente sin necesidad de conectarla a un tomacorriente. Cabe recalcar que, inicialmente, realizábamos las pruebas para la gestión de obstáculos con la Pi conectada a la pared, lo que nos permitió validar el comportamiento de nuestro código. Sin embargo, era evidente que teníamos que resolver este problema para que el robot fuera completamente autónomo.
 
 ![IMG_Baterias_3.7v](IMG_Baterias_3.7v.webp)
 
 ## Sensores
-Al inicio de la temporada nuestra propuesta fue utilizar los sensores laser VL53L0X, pensamos que serían la mejor opción por su largo alcance y precisión descrita, entonces nuestro primer chasis lo diseñamos teniendo en mente el uso de esos sensores. Conforme Realizamos pruebas notamos que por exactamente las características que seleccionamos esos sensores nos estaban afectando a nuestras pruebas y el algoritmo que propusimos, Los sensores no tienen un rango de visón recto, sino cónico y eso hacia que los sensores detectaran el suelo y las pruebas fallaban mucho. Por si no fuera poco, usar 3 de esos sensores consumían una cantidad intrigante de memoria de nuestro microcontrolador (Arduino UNO en ese momento).
+Al inicio de la temporada, nuestra propuesta era utilizar **sensores láser VL53L0X**. Pensamos que serían la mejor opción por su largo alcance y precisión, por lo que nuestro primer chasis fue diseñado para ellos. Al realizar pruebas, notamos que sus características nos afectaban: el **rango de visión cónico** hacía que los sensores detectaran el suelo, causando muchas fallas. Además, usar 3 de estos sensores consumía una cantidad excesiva de memoria de nuestro microcontrolador (en ese momento, un Arduino UNO).
+
 ![IMG_SensorLaser](IMG_SensorLaser.jpg)
 
-Todos estos problemas nos condujeron a tomar la decisión de reemplazar los sensores laser por sensores ultrasónicos HC - SR04, con esos sensores participamos en la etapa regional y a día de hoy siguen siendo parte de nuestro modelo actual de robot, hacer el cambio fue sencillo ya que los soportes que utilizamos para los sensores ultrasónicos ya los habíamos diseñado para proyectos anteriores, e incorporarlos al chasis fue sencillo ya que siempre intentamos que los accesorios y sensores de nuestros proyectos sean modulares, ósea que sean fácil de reemplazar y el diseño del encastre para encajar el soporte de los sensores ultrasónicos en el chasis era el mismo que el de los sensores laser.
+Estos problemas nos llevaron a reemplazarlos por **sensores ultrasónicos HC-SR04**. Con ellos participamos en la regional y siguen en nuestro modelo actual. El cambio fue sencillo gracias a nuestro diseño modular; los soportes para los ultrasónicos que habíamos diseñado para proyectos anteriores usaban el mismo sistema de encastre que los soportes láser en el chasis, haciendo la transición rápida y accesible.
 
-Esto hizo que la implementación y pruebas de los sensores fuera un cambio accesible y rápido.
+Contamos con **3 sensores ultrasónicos:** 1 al frente y 2 en los costados. Los sensores laterales se usan principalmente para determinar la dirección de giro. Una vez que el robot sale del primer cuadrante, siempre habrá un lado con barrera y otro sin ella. El sensor que detecte la mayor distancia dictará el sentido del giro (horario o antihorario).
 
- Anteriormente mencionamos que contamos con 3 sensores ultrasónicos, 1 al frente del robot y los otros 2 se encentran a los costados, los sensores de los contados son principalmente utilizados para encontrar la dirección de giro del robot, una vez el robot sale del primer cuadrante (en ambos desafíos) siempre habrá un lado donde halla barrera y un lado que no tenga barrera, el sensor que detecte la mayor distancia dictara el sentido del giro del robot, horario o antihorario. Mientras tanto el sensor ultrasónico dele frente tiene varias funciones, una de ellas es detectar la distancia entre el muro y el robot antes de dar vuelta en el desafío de vuelta libre, al detectar que está a 50 cm de la barrera el robot se detiene y procede a dar la vuelta. Otra de sus funciones es detectar la distancia entre el robot y un obstáculo en el desafío de obstáculos, cuando el robot se encuentra frente a menos de 15 cm de un obstáculo se detiene y gira en el sentido que el color indique. 
+El sensor frontal tiene múltiples funciones:
+
+1. En el desafío de "vuelta libre", detecta la distancia al muro antes de girar. Al detectar 50 cm, el robot se detiene y procede a girar.
+
+2. En el desafío de "obstáculos", detecta la proximidad a un obstáculo. Al detectar menos de 15 cm, se detiene y gira en la dirección que indique el color.
 
 ![IMG_SU](IMG_SU.webp)
 
-## HMI
-En el 3er piso del vehiculo se encuentra un mini proto (170p) donde contamos con 3 leds y un boton; En el chasis tambien esta montado un mini protoboard con un buzzer pasivo. En el desafio de vuelta libre utilizamos 1 de los LEDs para que al momeneto de poresionar nuestro boton de arranque del codigo se encienda el LED y el buzzer ejecuta un sonido y asi saber que esta corriendo el codigo. En el desafio de obstaculos dependiendo del caso que la camara detecto, se encienden diferentes LEDs segun el caso con la finalidad de tener un apoyo visual y asi sabaer si la camara detecto el caso correcto; Ademas el buzer ejecuta sonidos diferentes degun el caso.
-Cabe recalcar que el buzer genera un sonido al momento de detectar con los sensores ultrasonicos en todo momento.
+## HMI (Interfaz Hombre-Máquina)
+En la tercera planta del vehículo hay un mini protoboard (170p) con **3 LEDs y un botón.** En el chasis también está montado un buzzer pasivo.
+
+**Desafío de Vuelta Libre:** Al presionar el botón de arranque, se enciende un LED y el buzzer ejecuta un sonido, indicando que el código está en ejecución.
+
+**Desafío de Obstáculos:** Dependiendo del caso detectado por la cámara, se encienden diferentes LEDs para proporcionar retroalimentación visual, y el buzzer ejecuta sonidos distintos para cada caso.
+
+**Nota:** El buzzer también genera un sonido cada vez que los sensores ultrasónicos detectan un objeto.
 
 Gestion de obtaculos
 ===
 ## Camara
-Para realizar el desafio de obtaculos optamos por utilizar la raspberry pi camera. En este apartado se encontrara unicamnete como montamos la camara sobre nuestro vehiculo y los modelos de camara que hemos utilizado durante la temporada, para mas la informacion acerca de nuestra propuesta de solucion para esquivar los obstaculos y nuestro algoritmo consulte la carpeta [src.](/src)
+Para el desafío de obstáculos, optamos por utilizar una **Raspberry Pi Camera rev.1.3**. En este apartado se detalla únicamente cómo montamos la cámara en el vehículo y los modelos utilizados. Para la información sobre el algoritmo de detección y la solución para esquivar obstáculos, consulta la carpeta [src.](/src)
 
-Antes de usar la camara de raspberry, utilizabamos el modelo Night Vision Camera for Raspberry Pi - IR-CUT 5MP, y como su nombre lo indica es una camara de vion nocturna, al momento de probarla con la app OpenCV, la imagen era de con un filtro de color rojo y cuando cargabamos nuestro algoritmo de deteccion de colores no funcionaba. Al instante concluiamos que era por ese filtro, ya que en cualquier espacio donde probabamos nuestro codigo siempre mostraba valores diferentes y una de nuestras primeras soluciones fue aplicar un rango muy grande para cada color, verdy y rojo, esta solucion no funciono, ya que de igual manera no importaba en que espacio o salon nos encontrabamos siempre mostraba valores distintos, requeriamos de parametros muy especificos de luz y entorno y eso era un gran problema.
+Antes de usar la cámara oficial de Raspberry, utilizábamos el modelo **Night Vision Camera for Raspberry Pi - IR-CUT 5MP**. Como su nombre indica, es una cámara de visión nocturna. Al probarla con OpenCV, la imagen tenía un filtro rojo que impedía que nuestro algoritmo de detección de colores funcionara correctamente. Los valores de color variaban enormemente dependiendo del entorno, requiriendo condiciones de luz muy específicas, lo que era un problema grave.
+
 ![IMG_Camara_VN](IMG_Camara_VN.webp)
 
-Paras solucionar este problema, tuvimos que cambiar de camara al modelo que comentamos anteriormente. Este cambio fue practicamente la solucion a nuestro problema ya que el robot ya podia funcionar en distintos entornos y parametros. Como ya teniamos resuelto este problema, ya podiamos comenzar a diseñar un soporte para la camara y ensamblarlo en el robot. este soporte due creado 100% por nosotros, tomamos algunas ideas de otros robot de como lo podiamos implementar. 
+La solución fue cambiar a la cámara estándar de Raspberry Pi. Este cambio resolvió el problema inmediatamente, permitiendo que el robot funcione de manera confiable en distintos entornos. Con esto resuelto, procedimos a diseñar e implementar un soporte personalizado para la cámara, tomando ideas de varios diseños para nuestra solución.
+
 ![IMG_Camara_RB1.3](IMG_Camara_RB1.3.webp)
