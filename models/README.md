@@ -24,8 +24,11 @@ Como se puede notar, en los nombres de archivo de todos los modelos se menciona 
 
 Nos vimos en la necesidad de hacer un cambio en el chasis de nuestro robot: aparte de reacomodar algunos componentes como el regulador de voltaje y el mini proto(detalles esteticos), tuvimos que añadir un cuarto portabaterías a nuestro robot. En el desafío de obstaculos, cuando el Raspberry esta encendido consume una cantidad exhuberante de voltaje, con 1 sola vuelta del desafio el robot consume 0.08v. Nuestra solución consistió en añadir un cuarto portabaterías en paralelo. Esto incrementa la capacidad total (en amperios-hora), lo que le da al robot más autonomía para operar, manteniendo el mismo voltaje. 
 
+- [S25_Chasis_Rev14](/models/S25_Chasis_Rev14.STL).
+
 Para mantener los portabaterias en su posición diseñamos otra pieza (hay 2 en el robot) que es capaz de sostener 2 portabaterias a la vez, aqui se puede apreciar la pieza:
 
+- [SB_DrakoR_Rev2](/models/SB_DrakoR_Rev2.STL).
 
 ## Gestión de Movilidad
 **Soporte para Motor**
