@@ -109,7 +109,10 @@ Cambiamos el angulo del soporte para la camara a 63° y subimos la altura del so
 Para mejorar la confiabilidad en la detección de la posición y el color de los obstáculos, ajustamos la configuración:
 
 - **Ángulo de inclinación:** Cambiado de **70°** a **63°**.
+[S25_Union63_grados_Poste-Soporte_CamaraRev 2](/models/S25_Union63_grados_Poste-Soporte_CamaraRev 2.STL).
 
 - **Altura del soporte:** Aumentada en **1/8 de pulgada**.
+[S25_Soporte_CamaraRev2.STL](/models/S25_Soporte_CamaraRev2.STL).
+
 
 La configuración anterior, aunque funcional, dejaba un **margen de error muy bajo** para que el robot se posicionara correctamente frente a los obstáculos. Estos ajustes finos incrementaron significativamente la tasa de éxito de la detección y el posicionamiento.
