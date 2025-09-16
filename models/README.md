@@ -22,7 +22,19 @@ Como se puede notar, en los nombres de archivo de todos los modelos se menciona 
 
 **Actualización 14/09/2025**
 
-Nos vimos en la necesidad de hacer un cambio en el chasis de nuestro robot: aparte de reacomodar algunos componentes como el regulador de voltaje y el mini proto(detalles esteticos), tuvimos que añadir un cuarto portabaterías a nuestro robot. En el desafío de obstaculos, cuando el Raspberry esta encendido consume una cantidad exhuberante de voltaje, con 1 sola vuelta del desafio el robot consume 0.08v. Nuestra solución consistió en añadir un cuarto portabaterías en paralelo. Esto incrementa la capacidad total (en amperios-hora), lo que le da al robot más autonomía para operar, manteniendo el mismo voltaje. 
+1. Modificación del Chasis y Sistema de Potencia
+
+**Motivación:** Durante las pruebas de rendimiento en el desafío de obstáculos, se observó un consumo energético excesivo del módulo Raspberry Pi, el cual provocaba una descarga acelerada de las baterías (∼0.08V por ciclo completo). Este fenómeno comprometía la autonomía operativa del robot para cumplir con múltiples intentos o rondas de competencia.
+
+**Solución Implementada:** Para resolver este cuello de botella energético, se implementó una expansión del sistema de potencia mediante la integración de un cuarto portapilas, conectado en paralelo con los existentes. Esta configuración:
+
+  - **Incrementa la capacidad total** (Ah) del banco de baterías.
+
+  - **Mantiene el voltaje nominal** de operación de todos los componentes.
+
+  - **Proporciona mayor autonomía** al distribuir la demanda de corriente entre más fuentes.
+
+**Cambios Adicionales:** Como parte de la reconfiguración del chasis, se reoptimizó la ubicación del regulador de voltaje y la protoboard para mejorar la accesibilidad, la estética y la gestión de cables.
 
 - [S25_Chasis_Rev14](/models/S25_Chasis_Rev14.STL).
 
