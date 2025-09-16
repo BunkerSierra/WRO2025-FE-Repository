@@ -16,11 +16,11 @@ Partes electricas:
 -	Motor DC 12v con encoder GA37-520 300RPM
 -	Servomotor MG90S
 -	3 sensores ultrasónicos HC-SR04P
+-	Acelerometro/Giroscopio MPU 6050 - **Actualización 12/09/2025:** Acelerometro/Giroscopio GY9250
 -	4 Leds 
 -	6 Baterias 3.7v 18650 9900MhA - **Actualización 14/09/2025:** 8 Baterias 3.7v 18650 9900MhA
 -	3 Portabaterias 18650 - **Actualización 14/09/2025:** 4 Portabaterias 18650
 -	1 Buzzer pasivo
--	4 Leds
 -	2 Mini Protoboards
   
 Partes Mecánicas:
