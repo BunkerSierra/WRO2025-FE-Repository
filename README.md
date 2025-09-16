@@ -4,7 +4,7 @@ Somos un equipo de Baja California, México Integrado por 2 personas: Diego Alej
 
 Iniciamos en esta categoría justo este año, como novatos. Comenzamos a prepararnos a inicios del año (enero 2025) y a lo largo del tiempo nuestro robot a pasado por diferentes versiones, incluso nuestro robot se ve diferente a como se veía en la etapa regional. Mencionaremos nuestros componentes, el uso que tienen y como se complementan entre si para el funcionamiento de nuestro robot, así como también mencionaremos algunos de los cambios que hemos hecho en nuestro robot y por que se hicieron (con pruebas visuales). ACLARACION que la informacion solicitada estara en su carpeta correspondiente dentro del repositorio.
 
-Peso del robot (CARGA MAXIMA): 1054 gramos.
+Peso del robot (CARGA MAXIMA): 1165 gramos.
 
 BOM del robot:
 Partes electricas:
@@ -17,8 +17,8 @@ Partes electricas:
 -	Servomotor MG90S
 -	3 sensores ultrasónicos HC-SR04P
 -	4 Leds 
--	6 Baterias 3.7v 18650 9900MhA - **Actualización 14/08/2025:** 8 Baterias 3.7v 18650 9900MhA
--	3 Portabaterias 18650 - **Actualización 14/08/2025:** 4 Portabaterias 18650
+-	6 Baterias 3.7v 18650 9900MhA - **Actualización 14/09/2025:** 8 Baterias 3.7v 18650 9900MhA
+-	3 Portabaterias 18650 - **Actualización 14/09/2025:** 4 Portabaterias 18650
 -	1 Buzzer pasivo
 -	4 Leds
 -	2 Mini Protoboards
