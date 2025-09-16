@@ -8,13 +8,13 @@ Un dato que consideramos recalcar es que la mayoria de las partes mecanicas las 
 
 ## Chasis del Vehiculo
 El vehiculo consta de su chasis y y otros 2 pisos, cada uno de los pisos cuenta con diferentes componentes del robot:
-- **Chasis** Gesiton de movimiento del robot
-  - Sistema de direccion, Motor de movimiemto, Driver para motor y un Mini Protoboard.
+- **Chasis:** Gestión de movimiento del robot
+  - Sistema de dirección, Motor de movimiemto, Driver para motor y un Mini Protoboard.
   - [Vista de Chasis](/models/S25_Chasis_Rev12.STL).
-- **Piso 1** Controladores del Robot
-  - Arduino Mega, Raspberry Pi y camara
+- **Piso 1:** Controladores del Robot
+  - Arduino Mega, Raspberry Pi y RaspBerry pi Camara rev 1.3
   - [Vista de Piso 1](/models/S25_BS_Rev6.STL).
-- **Piso 2** Componentes Electricos
+- **Piso 2:** Componentes Eléctricos
   - Mini Protoboard con HMI y Girosensor.
   - [Vista de Piso 2](/models/S25_Piso3_Rev1.STL).
  
