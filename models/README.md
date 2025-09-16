@@ -112,7 +112,7 @@ La **altura** y la **inclinación** de la cámara son críticas para nuestro alg
 - Tras un proceso de **prueba y error**, determinamos que un ángulo de **70°** era el óptimo para nuestro caso de uso, ya que proporciona el campo de visión necesario para una detección oportuna y confiable.
   
 
-***Actualización 07/09/2025***
+**Actualización 07/09/2025**
 
 Cambiamos el angulo del soporte para la camara a 63° y subimos la altura del soprte 1/8", anteriormente con las especificaciones que mencionabamos el robot tenia un margen de error muy bajo para posicionarce frente a los obstaculos y fallaba al momento de detectar la posicion y color de los obstaculos.
 
