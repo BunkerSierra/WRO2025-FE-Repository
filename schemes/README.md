@@ -72,6 +72,16 @@ De igual manera, utilizamos el girosensor para los giros del robot. Al llegar al
 
 ![IMG_GiroSensor](IMG_GiroSensor.jpg)
 
+**Actualización 12/09/2025: Sustitución de la Unidad de Medición Inercial (IMU)**
+
+**Motivo:** La IMU anterior (GY-521) presentaba fallos intermitentes de lectura, caracterizados por un bloqueo o saturación de sus valores de salida. Este comportamiento generaba imprecisiones en la determinación de la orientación del vehículo, afectando la confiabilidad de las pruebas.
+
+**Acción:** Se procedió a reemplazar la unidad por un modelo **GY-9250** (que integra los sensores MPU-9250 y BMP280), seleccionado por su mayor estabilidad y confiabilidad reportadas.
+
+**Nota para réplica:** Para fines de replicación del sistema base, el modelo de sensor anterior es funcional. Esta actualización responde a una necesidad específica de robustez y precisión en la operación continua.
+
+![IMG-GY9250](IMG-GY9250.jpg)
+
 Gestión de Potencia y los Sentidos
 ====
 
