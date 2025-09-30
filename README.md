@@ -1,36 +1,81 @@
-## Introducción
-Bunker Sierra – WRO Future Engenieers 2025
-Somos un equipo de Baja California, México Integrado por 2 personas: Diego Alejandro Salas Díaz y Jacobo Arteaga Castañeda por parte de la escuela Bunker Robotics. Ambos integrantes contamos con experiencia de otras competencias de la categoria Robomission, para ser especifico 8 años de experiencia.
+## Introduction
 
-Iniciamos en esta categoría justo este año, como novatos. Comenzamos a prepararnos a inicios del año (enero 2025) y a lo largo del tiempo nuestro robot a pasado por diferentes versiones, incluso nuestro robot se ve diferente a como se veía en la etapa regional. Mencionaremos nuestros componentes, el uso que tienen y como se complementan entre si para el funcionamiento de nuestro robot, así como también mencionaremos algunos de los cambios que hemos hecho en nuestro robot y por que se hicieron (con pruebas visuales). ACLARACION que la informacion solicitada estara en su carpeta correspondiente dentro del repositorio.
+# Team Bunker Sierra – WRO Future Engineers 2025
 
-Peso del robot (CARGA MAXIMA): 1165 gramos.
+We are a team from Baja California, México, composed of two members: Diego Alejandro Salas Díaz and Jacobo Arteaga Castañeda from Bunker Robotics. Both team members have experience in other competitions, specifically the Robomission category, totaling 8 years of combined experience.
 
-BOM del robot:
-Partes electricas:
--	Arduino Mega 2650
--	Raspberry pi 4 model b (1GB RAM)
--	Raspberry pi cámara rev1.3
--	Motor driver IMS-2 WINGXINE - **Actualización 20/08/2025:** Puente H TB6612FNG
--	Regulador de voltaje LM2596 modulo StepDown
--	Motor DC 12v con encoder GA37-520 300RPM
--	Servomotor MG90S
--	3 sensores ultrasónicos HC-SR04P
--	Acelerometro/Giroscopio MPU 6050 - **Actualización 12/09/2025:** Acelerometro/Giroscopio GY9250
--	4 Leds 
--	6 Baterias 3.7v 18650 9900MhA - **Actualización 14/09/2025:** 8 Baterias 3.7v 18650 9900MhA
--	3 Portabaterias 18650 - **Actualización 14/09/2025:** 4 Portabaterias 18650
--	1 Buzzer pasivo
--	2 Mini Protoboards
-  
-Partes Mecánicas:
--	Chasis MDF x3
--	Sistema de dirección con enlaces de MDF
--	Llantas Lego 62.4 mm * 20 mm X 4
--	Soprte para Motor Impreso en 3d
--	Soportes para camara Raspberry rev1.3
--	Soportes para sensores ultrasonicos x3
--	Engrane diferencial Lego
--	Engrane Spur 24 dientes Impreso en 3d
--	Piezas Lego Technic
+This is our first year in the Future Engineers category. We began our preparation at the start of the year (January 2025), and over time, our robot has gone through several iterations. In fact, our current robot looks significantly different from the version used in the regional stage.
+
+In this document, we will detail our robot's components, their functions, and how they work together. We will also explain some of the key changes we have made to the robot, supported by visual evidence.
+
+Please note: All requested supplementary information will be available in its corresponding folder within the repository.
+
+**Robot Specifications:**
+
+- Weight (Maximum Load): 1165 grams.
+
+**Robot Bill of Materials (BOM)**
+
+*Electrical Parts:*
+
+- Arduino Mega 2560
+
+- Raspberry Pi 4 Model B (1GB RAM)
+
+- Raspberry Pi Camera Rev 1.3
+
+- Motor Driver: IMS-2 WINGXINE
+
+- - **Update 20/08/2025:** H-Bridge TB6612FNG
+
+- Voltage Regulator: LM2596 Step-Down Module
+
+- DC Motor with Encoder: GA37-520 300RPM
+
+- Servo Motor: MG90S
+
+- 3x Ultrasonic Sensors: HC-SR04P
+
+- Accelerometer/Gyroscope: MPU-6050
+
+- - **Update 12/09/2025:** Accelerometer/Gyroscope: GY-9250
+
+- 4x LEDs
+
+- Batteries: 6x 3.7v 18650 9900mAh
+
+- - **Update 14/09/2025:** 8x 3.7v 18650 9900mAh
+
+- - **Update 25/09/2025:** 3x 3.7v 18650 3000mAh
+
+- Battery Holders: 3x 18650 Holders
+
+- - **Update 14/09/2025:** 4x 18650 Holders
+
+- - **Update 25/09/2025:** 2x 18650 Holders
+
+- 1x Passive Buzzer
+
+- 2x Mini Protoboards
+
+*Mechanical Parts:*
+
+- MDF Chassis x3
+
+- MDF Linkage Steering System
+
+- 4x Lego Wheels (62.4mm x 20mm)
+
+- 3D-Printed Motor Mount
+
+- Raspberry Pi Camera Rev 1.3 Mounts
+
+- 3x Ultrasonic Sensor Mounts
+
+- Lego Differential Gear
+
+- 3D-Printed Spur Gear (24-tooth)
+
+- Lego Technic Parts
+
 
