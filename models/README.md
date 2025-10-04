@@ -45,29 +45,32 @@ To keep the battery holders securely in place, we designed another component (th
 
 - [SB_DrakoR_Rev2](/models/SB_DrakoR_Rev2.STL).
 
-## Gestión de Movilidad
-**Soporte para Motor**
+## Mobility Management
+**Motor Mount**
 
-Esta parte mecanica al estar relacionada a un componente electrico, su explicacíon se encuentra en [schemes](/schemes/README.md)
+As this mechanical part is related to an electrical component, its explanation can be found in the [schemes](/schemes/README.md) folder.
 
-**Soporte para Ejes del Motor**
+**Motor Axle Support**
 
-El eje de salida de nuestro motor se acopla a ejes (axles) LEGO que están conectados directamente a las llantas. Durante las primeras pruebas, notamos que estos ejes se pandeaban, lo que generaba una fuerza adicional no deseada en el eje Z del motor y provocaba un comportamiento inconsistente en cada prueba.
+The output shaft of our motor couples to LEGO axles that are connected directly to the wheels. During initial testing, we noticed that these axles were bending. This created an undesired additional force on the motor's Z-axis and caused inconsistent performance in each test run.
 
-Como solución, diseñamos e implementamos un soporte personalizado para estos ejes. Una vez instalados, los ejes se mantienen perfectamente alineados en un ángulo de **180°**, eliminando el pandeo y garantizando un comportamiento uniforme y predecible.
-- [Soporte para ejes](/models/S25_Soporte_Eje_Motor_Rev1.STL).
+As a solution, we designed and implemented a custom support for these axles. Once installed, the axles remain perfectly aligned at a 180° angle, eliminating bending and ensuring uniform and predictable behavior.
+- [Motor Axle support](/models/S25_Soporte_Eje_Motor_Rev1.STL).
 
-**Engrane Spur 24D**
+**24-Tooth Spur Gear**
 
-Inicialmente, utilizamos un engrane Spur LEGO de 24 dientes al que taladramos el centro para que calzara en el eje principal del motor. Esto nos permitió validar el comportamiento del sistema diferencial.
+Initially, we used a standard 24-tooth LEGO Spur gear, drilling out its center to fit the motor's main shaft. This allowed us to validate the behavior of the differential system.
 
-Sin embargo, esta solución provisional presentaba dos problemas críticos: el desgaste por uso deformaba rápidamente el agujero y generaba un **backlash** (juego) considerable. Para resolverlo, diseñamos nuestro propio engrane manteniendo las dimensiones estándar de LEGO pero con el diámetro interior exacto de nuestro eje, asegurando un ajuste perfecto y eliminando el juego.
+However, this provisional solution had two critical problems: the hole was quickly deformed by wear and tear, and it generated considerable backlash. To resolve this, we designed our own gear, maintaining the standard LEGO dimensions but with the exact inner diameter for our shaft. This ensured a perfect fit and eliminated the backlash.
 
-- Engrane Viejo:
+- **Old Gear:**
 
-![IMG_Spur24D_Lego](IMG_Spur24D_Lego.jpeg)
+  - ![IMG_Spur24D_Lego](IMG_Spur24D_Lego.jpeg)
 
-- [Engrane propuesto por el equipo](/models/S25_Spur_24D_Rev3.STL)
+
+- **Proposed Gear by the Team:**
+
+  - [New Custom Gear](/models/S25_Spur_24D_Rev3.STL)
 
 
 **Dirección** 
