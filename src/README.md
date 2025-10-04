@@ -1,88 +1,89 @@
 Software Control
 ====
 
-En este apartado se encuentra el software que hace funcionar los componentes electricos junto a las partes mecanicas del vehiculo. Sera hara mención de los componentes eléctricos de manera general en este apartado, para más información acerca de los compoentes revisar las siguientes carpetas:
+This section contains the software that operates the electrical components along with the vehicle's mechanical parts. The electrical components will be mentioned in a general manner in this section. For more detailed information about the components, please refer to the following folders:
 
 - [Models](/models).
 - [Schemes](/schemes).
 
-## Control de Posición
+## Position Control
 
 **Encoder**
 
-Para saber cuanto se ha movido el robot, utilizamos el encoder que se encuentra incorporado en nuestro motor. En concreto es un Encoder tipo **HALL**: dispositivo que utiliza sensores de efecto Hall para detectar el movimiento rotatorio y convertirlo en una señal eléctrica que indica posición o velocidad. 
-¿Que es el ***efecto hall***? El efecto Hall es la aparición de una diferencia de potencial (o campo eléctrico) transversal a un conductor cuando una corriente eléctrica lo atraviesa y, al mismo tiempo, se le aplica un campo magnético perpendicular a la dirección de la corriente.
+To determine how much the robot has moved, we use the encoder incorporated into our motor. Specifically, it is a HALL encoder: a device that uses **Hall** effect sensors to detect rotational movement and convert it into an electrical signal indicating position or speed.
 
-Realizamos un software de control PID para que el robot avance la cantidad de pulsos que le indicamos, con el control PID nos aseguramos de que el robot no le falte o supere una gran cantidad de pulsos y asi obtener más constancia en las pruebas que realizamos con nuestro vehiculo. Hasta el momento hemos logrado mantenerlo en un rango de ±4 pulsos. El software esta incorporado tanto en el desafio de vuelta libre tanto en el de obstaculos.
+**What is the** ***Hall effect?*** The Hall effect is the appearance of a potential difference (or electric field) transverse to an electrical conductor when an electric current flows through it and, simultaneously, a magnetic field is applied perpendicular to the direction of the current.
+
+We implemented PID control software to make the robot advance the specific number of pulses we command. With the PID control, we ensure the robot does not fall significantly short of or exceed the target pulse count, thus achieving greater consistency in our vehicle's test runs. So far, we have managed to maintain the error within a range of ±4 pulses. This software is incorporated into both the Free Turn and the Obstacles challenges.
 
 - [CTRL_POS](/src/CTRL_POS.ino).
 
 
-**Girosensor**
+**Gyro Sensor**
 
-El uso de este sensor es fundamental para el funcionamiento de nuestro vehiculo, tiene unicamente 2 objetivos pero son muy importantes:
+The use of this sensor is fundamental for our vehicle's operation. It has only two objectives, but they are very important:
 
-1. Avanzar derecho **(Ambos desafíos)**.
-2. Dar vueltas.
+1. Moving in a straight line **(Both challenges)**.
+2. Make Turns.
 
-1- Para que el robot siga una trayectoria y no se desvie mucho de ella, utilizamos un sistema de control PD para que el robot se mantenga en el angulo 0° del eje Z del giroscopio, utilizamos un Acelerometro/Giroscopio GY9250, para mantenerse en el mismo angulo el sistema de control ajusta la direccion con el servomotor, esto quiere decir que si se desvia el sistema de direccion del robot gira en sentido contrario de la desviación y esto permite que el robot se mantenga centrado. Como es de esperarse no siempre se mantiene paralelo a la trayectoria, cuando recorre distancias muy largas hay una desviacion no mayor a 2° grados, pero se mantiene dentro de nuestras tolereancias marcadas. 
+**1. Straight-Line Movement:** To ensure the robot follows a trajectory without significant deviation, we use a PD control system to maintain the robot at the 0° angle of the gyroscope's Z-axis. We use a GY9250 Accelerometer/Gyroscope. To maintain the same angle, the control system adjusts the steering using the servo motor. This means that if the robot deviates, the steering system turns in the opposite direction to the deviation, allowing the robot to stay centered. As expected, it doesn't always stay perfectly parallel to the trajectory; over very long distances, there is a deviation of no more than 2 degrees, but it remains within our specified tolerances.
 
-2- todas las vueltas que el robot hace dentro de la pista son en base al girosensor, Hace falta aclarar que para dar vueltas la direccion del robot se mueve hasta el punto maximo que puede llegar (Izquierda o Derecha), no ajustamos la direccion en posiciones diferentes ya que habrian muchas mas variables a considerar al momento de dar vueltas. Una vez que la direccion este en su posición para dar vuelta, el vehiculo avanza hats que llegue al agrado indicado en el girosensor, cuando se detiene regresa la direccion al centro y el robot continua con la rutina.
+**2. Making Turns:** All turns the robot makes on the track are based on the gyro sensor. It's important to clarify that for making turns, the robot's steering moves to the maximum possible position (Left or Right). We do not adjust the steering to intermediate positions for turns, as this would introduce many more variables to consider. Once the steering is in position for the turn, the vehicle moves forward until it reaches the target angle indicated by the gyro sensor. When it stops, the steering returns to the center position, and the robot continues with its routine.
 
 
 ## Sensores Ultrasonicos
 
-**Sensor Frontal**
+**Front Sensor**
 
-Como hemos mencionado en otros apartados del repositorio nuestro robot cuanta con 3 sensores ultrasonicos, uno en la parte frontal y 2 en los laterales (1 por lado), El sensor frontal tiene 2 funciones en nuestro vehiculo:
+As mentioned in other sections of the repository, our robot is equipped with 3 ultrasonic sensors: one on the front and two on the sides (one per side). The front sensor has two main functions:
 
-  1. Detectar la distancia entre el robot y las barreras de la pista **(Desafio Abierto)**
-  2. Obtener la distancia entre el robot y los obstaculos **(Desafio de Obstaculos)**
+  1. To detect the distance between the robot and the track barriers **(Open Challenge).**
+  2. To obtain the distance between the robot and the obstacles **(Obstacle Challenge).**
 
-1- En el desafio de vuelta libe y obstaculos el robot utiliza el sensor ultrasonico frontal para detectar cuando esta cerca de la barrera que tenga frente a el. Al llegar a una distancia ≤ 64 cm el vehiculo se detiene y da la vuelta en el sentido que hayan marcado los sensores laterales. Esto nos permite mantener una mayor constancia al momento de realizar la vueltas en ambos desafios.
+1. Open & Obstacle Challenge Barrier Detection: In both the Free Turn and Obstacles challenges, the robot uses the front ultrasonic sensor to detect when it is close to the barrier in front of it. When the distance reaches ≤ 64 cm, the vehicle stops and turns in the direction indicated by the side sensors. This allows us to maintain greater consistency when executing turns in both challenges.
    
-2- En el desafio de obstaculos cuando el robot se posiciona frente a los obstaculos el sensor ddetecta la distancia entre el obstaculo y el vehiculo, de esta manera el robot sabe la cercania que tiene al obstaculo y que tan abierta o cerrada debe ser la vuelta
+2. Obstacle Challenge Proximity Sensing: In the Obstacle challenge, when the robot positions itself in front of an obstacle, the sensor detects the distance between the obstacle and the vehicle. This allows the robot to know its proximity to the obstacle and determine how wide or tight the turn needs to be.
 
-El codigo para usar los sensores ultrasonicos enta en el archivo [funciones](/src/S25_Obstaculos_29_08_2025/Funciones.ino), Dentro de el se encuentran la mayoria de las funciones que utilizamos en nuestro codigo principal.
+he code for using the ultrasonic sensors is located in the [funciones](/src/S25_Obstaculos_29_08_2025/Funciones.ino) file. This file contains most of the functions we use in our main code.
 
-**Sensores Laterales**
+**Side Sensors**
 
-Los sensores laterares tienen varios objetivos en nuestro vehiculo, son los siguientes:
+The side sensors serve several objectives in our vehicle, which are as follows:
 
-1. Determinar el sentido de giro (Horario-Antihorario).
-2. Seguidores de pared.
-3. Detectar las barreras internas.
-4. Detectar las limitaciones de aparcamiento.
+1. Determine the direction of rotation (Clockwise/Counter-clockwise).
+2. Wall following.
+3. Detect the inner barriers.
+4. Detect the parking boundaries.
 
-Anteriormente los sensores compartian el mismo puerto para el pin **Trigger** con un cable en Y. Al inicio lo haciamos por que nuestro microcontrolador era un Arduino UNO y eso nos ahorraba puertos y creiamos que era una buena idea por que tambien facilitaba el codigo, sin embargo por las necesidades de nuestro vehiculo y los sensores que añadiamos con el tiempo el Arduino UNO se quedaba muy corto de puertos y nos vimos en la necesidad de cambiar al Arduino MEGA. A pesar del cambio continuamos con la configuración de los sensores laterales, con el tiempo notamos que los sensores tenian un comportamiento erratico o no siempre daban las distancias de manera correcta. Por esta razón aprovechando la gran cantidad de puertos digitales del nuevo microcontrolador realizamos el cambio para que cada sensor tenga su propio puerto trigger.
+Previously, the sensors shared the same port for the **Trigger** pin using a Y-cable. Initially, we did this because our microcontroller was an Arduino UNO, which saved ports, and we thought it was a good idea as it also simplified the code. However, due to our vehicle's needs and the additional sensors we integrated over time, the Arduino UNO had insufficient ports, forcing us to upgrade to an Arduino MEGA. Despite this change, we continued with the shared trigger configuration for the side sensors. Over time, we noticed the sensors exhibited erratic behavior or did not always return accurate distances. For this reason, leveraging the abundance of digital ports on the new microcontroller, we modified the setup so that each sensor now has its own dedicated trigger port.
 
-A continuacion se explicaran cada uno de los objetivos de los sensores laterales:
+The objectives of the side sensors are explained below:
 
-1. En ambos desafios, cuando el robot robot da la primer vuelta para dirigirse a otro cuadrante enviamos la funcion *twoSUS* para bstener la distancia detectada de ambos sensores y dependiendo de cual fue el que detcto mayor distancia, determinamos el sentido de giro para la prueba: si el sensor derecho tenia la mayor distancia entonces el sendido es horario, pero si el que tenia la mayor distancia fue el izquierdo entonces el sentido es Antihorario.
+1. **Turn Direction:** In both challenges, when the robot makes its first turn to head to another quadrant, we call the *twoSUS* function to get the distance detected by both sensors. Depending on which sensor detected the greater distance, we determine the turn direction for the run: if the right sensor had the greater distance, the direction is clockwise; if the left sensor had the greater distance, it is counter-clockwise.
    
-2. En el desafio de obstaculos utilizamos un seguidor PD para seguir las barreras exteriores en los casos donde hay uno o dos objetos verdes en el cuadrante (más adelante se menciona el desarrollo del algoritmo para esquivar obstaculos). Cuando termina el cuadrante con obstaculos el robot se posiciona para detectar los obstaculos del siguiente cuadrante de obstaculos.
+2. **Wall Following:** In the Obstacle challenge, we use a PD follower to track the outer barriers in cases where there are one or two green objects in the quadrant (the development of the obstacle avoidance algorithm will be discussed later). After completing the quadrant with obstacles, the robot positions itself to detect the obstacles in the next obstacle quadrant.
 
-3. En los casos donde hay al menos un objeto rojo el robot utiliza el sensor lateral que apunta hacia las barreras internas para alinaerse con ellas, de esta manera se obtiene un mayor control de la poscion del robot despues de esquivar el obstaculo de color rojo. Anteriormente tambien segiamos la pared en el caso donde hay objetos rojos involucrados, pero como la distancia que recorria era muy pequeña ecuando el robot terminaba el seguidor terminaba en posiciones diferentes y hacia muy dificil posicionarse para el siguiente cuadrante u obstaculo.
+3. **Inner Barrier Detection:** In cases involving at least one red object, the robot uses the side sensor facing the inner barriers to align with them. This provides greater control over the robot's position after avoiding the red obstacle. We previously also used wall following for scenarios involving red objects, but since the distance traveled was very short, the robot would end the following routine in inconsistent positions, making it very difficult to position itself for the next quadrant or obstacle.
 
-4. El nombre de este objetivo es muy claro, no hay mayor explicacion fuera de que cuando el robot termina las 3 vueltas utilizamos uno de los sensores laterales (depende del sentido de giro) para detectar una de las limitaciones de aparcamiento para iniciar con la rutina para aparcarse.
+4. **Parking Boundary Detection:** The name of this objective is self-explanatory. When the robot completes the three laps, we use one of the side sensors (depending on the turn direction) to detect one of the parking boundaries to initiate the parking routine.
 
    
-## Manejo de obstaculos 
+## Obstacle Management 
 
-**Algoritmo**
+**Algorithm**
 
-En las reglas de la categoria se hace mención de los 36 casos posibles de posicion obstaculos, para resolver este desafío primero discutimos entre equipo cual seria la mejor opcion para resolverlo, ya que antes de programar se tiene que plantear la poblematica de manera correcta. Despues de varias horas de discusión, llegamos a la siguiente solucion: los casos de posición se pueden simplificar a unicamente 4 casos 
+The category rules mention 36 possible obstacle position cases. To solve this challenge, our team first discussed the best approach, as it's crucial to correctly define the problem before programming. After several hours of discussion, we arrived at the following solution: the position cases can be simplified to just 4 core scenarios:
 
-- Rojo
-- Verde
-- Verde - Rojo
-- Rojo - Verde
+- Red
+- Green
+- Green - Red
+- Red - Green
 
-independientemente de el espacio donde se encuentren los casos se reducen a simplemente 4 configuraciones por cuadrante, entonces nuestra solucion es programar la rutina de los 4 casos y al terminar de esquivar los obstaculos por cuadrante el robot se posiciona para detectar los obstaculos del siguiente cuadrante. Esto se repite en bucle hasta haber completado las 3 vueltas.
+Regardless of their specific location within the quadrant, all cases reduce to these 4 configurations. Therefore, our solution was to program routines for these 4 cases. After avoiding the obstacles in one quadrant, the robot positions itself to detect the obstacles in the next quadrant. This process repeats in a loop until the 3 laps are completed.
 
-**Programa para Detección de Objetos y Colores**
+**Object and Color Detection Program**
 
-Nuestro programa de cámara divide la visión de la pantalla por zonas y resalta el contorno de los obstáculos, ignorando contornos más pequeños al área que abarcan los obstáculos; cambia el valor de una variable dependiendo del color del obstáculo que detecte frente a él. Y seleccona el caso dependiendo de el color y la poscion de los objetos. Para determinar la posición de los obstaculos utilizamos los pixeles de la camara en el eje Y, dependiendo en que pixel se encuentren y el color del contorno de los objetos se determina el caso.
+Our camera program divides the screen's view into zones and highlights the contour of the obstacles, ignoring contours smaller than the area covered by the actual obstacles. It changes the value of a variable depending on the color of the obstacle detected in front of it and selects the case based on the color and position of the objects. To determine the position of the obstacles, we use the camera's pixels on the Y-axis; the case is determined by the pixel location and the color of the object's contour.
 
-Como el robot usa Raspberry y Arduino, la forma en que manda estos valores la cámara al Arduino, es por medio del puerto serial, imprimiendo el valor y mandándolo al Arduino, el cual hace una acción dependiendo del valor obtenido. Para vizualizar de una manera mas sencilla si se detecto el caso correcto, el robot cuenta con 4 LED's y se encienden (1 por caso) dependiendo del caso que se detecto. Como extra genera diferntes frecuencias de sonido sugun el caso.
+Since the robot uses both a Raspberry Pi and an Arduino, the camera sends these values to the Arduino via the serial port by printing the value and transmitting it. The Arduino then performs an action based on the received value. To provide a simpler visual confirmation of the detected case, the robot has 4 LEDs, and one lights up for each specific case detected. As an additional feedback mechanism, it also generates different sound frequencies depending on the case.
 
