@@ -1,27 +1,27 @@
-Diagramas Electricos
+Electrical Diagrams
 ====
 
-En esta sección se presentan los diagramas eléctricos de todos los componentes y una descripción de su funcionamiento. Además, se desglosa el hardware del robot y su conexión con las piezas mecánicas. Todos los modelos y diseños 3D mencionados aquí están disponibles en la carpeta [models](/models).
+This section presents the electrical diagrams of all components along with a description of their operation. Furthermore, it breaks down the robot's hardware and its integration with the mechanical parts. All 3D models and designs mentioned here are available in the [models](/models) folder.
 
-## Diagrama Electrico General del Vehiculo: 
+## General Vehicle Electrical Diagram: 
 
 ![DE-S25_bb](DE-S25_bb.jpg)
 
-***Especificaciones:*** La placa **Arduino MEGA** es alimentada directamente desde el puerto de comunicación serial de la computadora **Raspberry Pi 4**. Esta última, a su vez, es alimentada por nuestro regulador de voltaje **LM2596**, configurado a **5.1V** y **3A**. Ajustamos el regulador a 5.1V porque al configurarlo exactamente a 5V, la Raspberry Pi solía presentar problemas de alimentación.
+***Specifications:*** The **Arduino MEGA** board is powered directly through the serial communication port of the **Raspberry Pi 4** computer. The Raspberry Pi, in turn, is powered by our **LM2596** voltage regulator, set to **5.1V** and **3A**. We adjusted the regulator to 5.1V because when set exactly to 5V, the Raspberry Pi would often experience power supply issues.
 
 
-## Diagramas Eléctricos de Cada Componente y Sensor Vehiculo:
+## Electrical Diagrams for Each Component and Sensor:
 
 
-***Aclaración:*** Los siguientes diagramas muestran las conexiones de señal de cada sensor y componente eléctrico. **Únicamente** los diagramas de **Potencia** y **Motor con Motor Driver** incluyen las conexiones de alimentación, ya que son indispensables para replicar el robot. Los demás diagramas omiten estas conexiones para permitir flexibilidad a otros equipos, pero pueden consultarse en el **Diagrama Eléctrico General** mostrado arriba.
+***Clarification:*** The following diagrams show the signal connections for each sensor and electrical component. **Only* the **Power System** and **Motor with Motor Driver** diagrams include the power supply connections, as these are essential for replicating the robot. The other diagrams omit these connections to provide flexibility for other teams, but they can be referenced in the **General Electrical Diagram** shown above.
 
 
-- **Sensores Ultrasonicos**
+- **Ultrasonic Sensors**
   
 ![IMG-DE_SUS](IMG-DE_SUS.jpg)
 
 
-- **Acelerometro/Giroscopio GY-521**
+- **Accelerometer/Gyroscope**
   
 ![IMG-DE_Gyro](IMG-DE_Gyro.jpg)
 
@@ -41,92 +41,92 @@ En esta sección se presentan los diagramas eléctricos de todos los componentes
 ![IMG-DE_Motor_MDirver](IMG-DE_Motor_MDirver.png)
 
 
-- **Etapa de Potencia y Raspberry pi 4**
+- **Power Stage and Raspberry Pi 4**
   
 ![IMG-DE_Potencia](IMG-DE_Potencia.jpg)
 
 
-Manejo de Movilidad
+Mobility Management
 ===
-## Motor DC 12v con encoder 
-Elegimos este motor principalmente por el **encoder integrado**. Este sensor nos permite conocer la posición del robot, lo que aporta múltiples beneficios a nuestra solución: calcular la cantidad de vueltas, la distancia recorrida, asistir en el estacionamiento en paralelo y, en general, todas las variables relacionadas con la posición.
+## 12V DC Motor with Encoder
+We selected this motor primarily for its **integrated encoder**. This sensor allows us to track the robot's position, which provides multiple benefits for our solution: calculating rotation count, measuring distance traveled, assisting in parallel parking, and, in general, all variables related to positioning.
 
 ![IMG-Motor12v](IMG-Motor12v.jpg)
 
-Inicialmente, utilizábamos un motor de un juguete RC que incluía un diferencial. Con ese motor participamos en la etapa regional de Mexicali. Decidimos cambiarlo porque la velocidad variaba demasiado y la falta de un encoder hacía muy difícil mantener la consistencia en los movimientos. Sabemos que es imposible que un robot repita una rutina de manera exacta, pero ese componente lo dificultaba aún más. El cambio a un motor con encoder y un diferencial LEGO nos da un control mucho mayor sobre estas variables. Para lograrlo, diseñamos un soporte que acoplara el motor al diferencial LEGO, el cual pasó por 3 revisiones.
+Initially, we used a motor from an RC toy that included a differential. We used that motor during the regional stage in Mexicali. We decided to change it because its speed was too inconsistent, and the lack of an encoder made it very difficult to maintain consistent movements. We understand that it's impossible for a robot to repeat a routine exactly, but that component made it even more challenging. Switching to a motor with an encoder and a LEGO differential gives us much greater control over these variables. To achieve this, we designed a mount to couple the motor to the LEGO differential, which went through 3 revisions.
 
 ![IMG_Soporte_Motor_Rev1](IMG_Soporte_Motor_Rev1.jpeg)
 
-*Así se veía la primera versión. Permitía pruebas básicas, pero el motor no estaba fijado al soporte, lo que generaba perturbaciones.*
+*This is what the first version looked like. It allowed for basic testing, but the motor was not secured to the mount, which caused disturbances and instability.*
 
 -[Soporte para motor Rev3](/models/S25_Soporte_Motor_y_Transmision_Rev3.STL) 
 
-*En la revisión actual, el motor está firmemente fijado al soporte, eliminando las perturbaciones por movimiento*. Así mismo tuvimos un caso similar con el engrane que se conecta al motor. 
+*In the current revision, the motor is firmly secured to the mount, eliminating disturbances caused by movement.* We had a similar case with the gear that connects to the motor.
 
-## Movimiento 
-Para que el robot avance en línea recta, utilizamos un **girosensor con un controlador PD**. Esto permite que el robot mantenga su rumbo. Como se ha mencionado, es imposible que sea perfecto, pero con este sistema la desviación es mínima, **nunca superando los 2°** desde el punto inicial (considerando 0° como el origen).
+## Movement 
+To make the robot move in a straight line, we use a gyro sensor with a PD controller. This allows the robot to maintain its heading. As mentioned before, it's impossible to be perfect, but with this system the deviation is minimal, never exceeding 2° from the initial point (considering 0° as the origin).
 
 ![IMG_Offset](IMG_Offset.jpeg)
 
-De igual manera, utilizamos el girosensor para los giros del robot. Al llegar al punto deseado, el robot gira las ruedas y avanza hasta detectar el ángulo objetivo. Una vez alcanzado, detiene los motores y vuelve la dirección a la posición neutral.
+Similarly, we use the gyro sensor for the robot's turns. Upon reaching the desired point, the robot turns the wheels and moves forward until it detects the target angle. Once reached, it stops the motors and returns the steering to the neutral position.
 
 ![IMG_GiroSensor](IMG_GiroSensor.jpg)
 
-**Actualización 12/09/2025: Sustitución de la Unidad de Medición Inercial (IMU)**
+**Update 12/09/2025: Inertial Measurement Unit (IMU) Replacement**
 
-**Motivo:** La IMU anterior (GY-521) presentaba fallos intermitentes de lectura, caracterizados por un bloqueo o saturación de sus valores de salida. Este comportamiento generaba imprecisiones en la determinación de la orientación del vehículo, afectando la confiabilidad de las pruebas.
+**Reason:** The previous IMU (GY-521) exhibited intermittent reading failures, characterized by a lock-up or saturation of its output values. This behavior caused inaccuracies in determining the vehicle's orientation, affecting the reliability of our test runs.
 
-**Acción:** Se procedió a reemplazar la unidad por un modelo **GY-9250** (que integra los sensores MPU-9250 y BMP280), seleccionado por su mayor estabilidad y confiabilidad reportadas.
+**Action:** The unit was replaced with a **GY-9250** model (which integrates the MPU-9250 and BMP280 sensors), selected for its reported higher stability and reliability.
 
-**Nota para réplica:** Para fines de replicación del sistema base, el modelo de sensor anterior es funcional. Esta actualización responde a una necesidad específica de robustez y precisión en la operación continua.
+**Replication Note:** For the purpose of replicating the base system, the previous sensor model is functional. This update addresses a specific need for robustness and precision during continuous operation.
 
 ![IMG-GY9250](IMG-GY9250.jpg)
 
-Gestión de Potencia y los Sentidos
+Power and Sensor Management
 ====
 
-## Energía
-El robot utiliza **6 baterías de 3.7V y 9900mAh (18650)**. Están divididas en *4 portabaterías conectados en paralelo** para administrar la corriente de manera eficiente. El voltaje máximo del sistema es de **8.4V**.
+## Energy
+The robot uses **six 3.7V 9900mAh (18650) batteries**. They are divided into **four battery holders connected in parallel** to manage current efficiently. The system's maximum voltage is **8.4V**.
 
-Para alimentar nuestra computadora **Raspberry Pi 4**, utilizamos un **regulador de voltaje LM2596 ajustado a 5.1V**. Esto permite que la placa funcione correctamente sin necesidad de conectarla a un tomacorriente. Cabe recalcar que, inicialmente, realizábamos las pruebas para la gestión de obstáculos con la Pi conectada a la pared, lo que nos permitió validar el comportamiento de nuestro código. Sin embargo, era evidente que teníamos que resolver este problema para que el robot fuera completamente autónomo.
+To power our **Raspberry Pi 4 computer**, we use an **LM2596 voltage regulator set to 5.1V**. This allows the board to function correctly without needing to be plugged into a wall outlet. It's important to note that we initially conducted tests for obstacle management with the Pi connected to a wall outlet, which allowed us to validate our code's behavior. However, it was evident that we needed to solve this power issue for the robot to be fully autonomous.
 
 ![IMG_Baterias_3.7v](IMG_Baterias_3.7v.webp)
 
-## Sensores
-Al inicio de la temporada, nuestra propuesta era utilizar **sensores láser VL53L0X**. Pensamos que serían la mejor opción por su largo alcance y precisión, por lo que nuestro primer chasis fue diseñado para ellos. Al realizar pruebas, notamos que sus características nos afectaban: el **rango de visión cónico** hacía que los sensores detectaran el suelo, causando muchas fallas. Además, usar 3 de estos sensores consumía una cantidad excesiva de memoria de nuestro microcontrolador (en ese momento, un Arduino UNO).
+## Sensors
+At the start of the season, our initial proposal was to use **VL53L0X laser sensors**. We thought they would be the best option due to their long range and precision, so our first chassis was designed for them. During testing, we realized their characteristics were problematic for us: the **conical field of view** caused the sensors to detect the floor, leading to many failures. Furthermore, using 3 of these sensors consumed an excessive amount of our microcontroller's memory (at that time, an Arduino UNO).
 
 ![IMG_SensorLaser](IMG_SensorLaser.jpg)
 
-Estos problemas nos llevaron a reemplazarlos por **sensores ultrasónicos HC-SR04**. Con ellos participamos en la regional y siguen en nuestro modelo actual. El cambio fue sencillo gracias a nuestro diseño modular; los soportes para los ultrasónicos que habíamos diseñado para proyectos anteriores usaban el mismo sistema de encastre que los soportes láser en el chasis, haciendo la transición rápida y accesible.
+These issues led us to replace them with **HC-SR04 ultrasonic sensors**. We used these in the regional competition, and they remain in our current model. The change was straightforward thanks to our modular design; the mounts for the ultrasonic sensors we had designed for previous projects used the same mounting system as the laser sensor mounts on the chassis, making the transition quick and easy.
 
-Contamos con **3 sensores ultrasónicos:** 1 al frente y 2 en los costados. Los sensores laterales se usan principalmente para determinar la dirección de giro. Una vez que el robot sale del primer cuadrante, siempre habrá un lado con barrera y otro sin ella. El sensor que detecte la mayor distancia dictará el sentido del giro (horario o antihorario).
+We have **3 ultrasonic sensors:** 1 at the front and 2 on the sides. The side sensors are primarily used to determine the turning direction. Once the robot leaves the first quadrant, there will always be one side with a barrier and one without. The sensor detecting the greater distance will dictate the turn direction (clockwise or counterclockwise).
 
-El sensor frontal tiene múltiples funciones:
+The front sensor has multiple functions:
 
-1. En el desafío de "vuelta libre", detecta la distancia al muro antes de girar. Al detectar 50 cm, el robot se detiene y procede a girar.
+1. In the "Free Turn" challenge, it detects the distance to the wall before turning. Upon detecting 50 cm, the robot stops and proceeds to turn.
 
-2. En el desafío de "obstáculos", detecta la proximidad a un obstáculo. Al detectar menos de 15 cm, se detiene y gira en la dirección que indique el color.
+2. In the "Obstacles" challenge, it detects proximity to an obstacle. Upon detecting less than 15 cm, it stops and turns in the direction indicated by the color.
 
 ![IMG_SU](IMG_SU.webp)
 
-## HMI (Interfaz Hombre-Máquina)
-En la tercera planta del vehículo hay un mini protoboard (170p) con **3 LEDs y un botón.** En el chasis también está montado un buzzer pasivo.
+## HMI (Human-Machine Interface)
+On the vehicle's third level, there is a mini protoboard (170 points) with **3 LEDs and a button**. A passive buzzer is also mounted on the chassis.
 
-**Desafío de Vuelta Libre:** Al presionar el botón de arranque, se enciende un LED y el buzzer ejecuta un sonido, indicando que el código está en ejecución.
+**Free Turn Challenge:** When the start button is pressed, an LED turns on and the buzzer plays a sound, indicating that the code is running.
 
-**Desafío de Obstáculos:** Dependiendo del caso detectado por la cámara, se encienden diferentes LEDs para proporcionar retroalimentación visual, y el buzzer ejecuta sonidos distintos para cada caso.
+**Obstacles Challenge:** Depending on the case detected by the camera, different LEDs light up to provide visual feedback, and the buzzer plays distinct sounds for each case.
 
-**Nota:** El buzzer también genera un sonido cada vez que los sensores ultrasónicos detectan un objeto.
+**Note:** The buzzer also generates a sound whenever the ultrasonic sensors detect an object.
 
-Gestion de obtaculos
+Obstacle Management
 ===
-## Camara
-Para el desafío de obstáculos, optamos por utilizar una **Raspberry Pi Camera rev.1.3**. En este apartado se detalla únicamente cómo montamos la cámara en el vehículo y los modelos utilizados. Para la información sobre el algoritmo de detección y la solución para esquivar obstáculos, consulta la carpeta [src.](/src)
+## Camera
+For the obstacle challenge, we chose to use a **Raspberry Pi Camera rev.1.3.** This section only details how we mounted the camera on the vehicle and the models used. For information on the detection algorithm and the obstacle avoidance solution, please refer to the [src](/src) folder.
 
-Antes de usar la cámara oficial de Raspberry, utilizábamos el modelo **Night Vision Camera for Raspberry Pi - IR-CUT 5MP**. Como su nombre indica, es una cámara de visión nocturna. Al probarla con OpenCV, la imagen tenía un filtro rojo que impedía que nuestro algoritmo de detección de colores funcionara correctamente. Los valores de color variaban enormemente dependiendo del entorno, requiriendo condiciones de luz muy específicas, lo que era un problema grave.
+Before using the official Raspberry camera, we used the ***Night Vision Camera for Raspberry Pi - IR-CUT 5MP model.** As the name implies, it is a night vision camera. When testing it with OpenCV, the image had a red filter that prevented our color detection algorithm from working correctly. The color values varied drastically depending on the environment, requiring very specific lighting conditions, which was a major problem.
 
-![IMG_Camara_VN](IMG_Camara_VN.webp)
+![IMG_Camera_VN](IMG_Camara_VN.webp)
 
-La solución fue cambiar a la cámara estándar de Raspberry Pi. Este cambio resolvió el problema inmediatamente, permitiendo que el robot funcione de manera confiable en distintos entornos. Con esto resuelto, procedimos a diseñar e implementar un soporte personalizado para la cámara, tomando ideas de varios diseños para nuestra solución.
+The solution was to switch to the standard Raspberry Pi camera. This change immediately resolved the issue, allowing the robot to function reliably in different environments. With this resolved, we proceeded to design and implement a custom mount for the camera, taking ideas from various designs for our solution.
 
-![IMG_Camara_RB1.3](IMG_Camara_RB1.3.webp)
+![IMG_Camera_RB1.3](IMG_Camara_RB1.3.webp)
