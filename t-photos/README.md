@@ -1,18 +1,18 @@
 Team's photos
 ====
 
-En este apartado se pueden encontrar la fotos del equipo 
+You can find the team photos in this section.
 
-- **Foto Seria**
+- **Formal Photo**
   
-En la foto se pueden apreciar a los 3 integrantes del equipo (Izquierda-Derecha)
+The photo shows the 3 team members (from left to right):
 
-Jacobo Arteaga Castañeda - Diego Alejandro Salas Díaz - Andrea Perez Bueno(Coach)
+Jacobo Arteaga Castañeda - Diego Alejandro Salas Díaz - Andrea Perez Bueno (Coach)
 
 ![IMG-Serius](IMG-Serius.jpeg)
 
-- **Foto de JUBILO**
+- **Funny Photo**
   
-En la foto se puede apreciar el nacimiento de nuestro robot:)
+The photo captures the "birth" of our robot :)
 
 ![IMG-FunnyP](IMG-FunnyP.jpeg)
