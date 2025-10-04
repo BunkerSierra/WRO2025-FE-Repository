@@ -73,66 +73,66 @@ However, this provisional solution had two critical problems: the hole was quick
   - [New Custom Gear](/models/S25_Spur_24D_Rev3.STL)
 
 
-**Dirección** 
+**Steering System** 
 
-Nuestro sistema de dirección funciona mediante un mecanismo de **enlaces** conectados a las **manguetas**. En el centro de uno de estos enlaces, una pieza personalizada se conecta directamente a un servomotor **MG90S**, que nos permite posicionar la dirección con precisión en los ángulos específicos que requiere nuestro algoritmo de navegación.
+Our steering system operates through a **linkage mechanism** connected to the **steering knuckles**. At the center of one of these links, a custom-made component is directly attached to an **MG90S servo motor**, allowing us to position the steering mechanism precisely at the specific angles required by our navigation algorithm.
 
-Los enlaces fueron fabricados en **MDF** por su rigidez y bajo peso, mientras que las manguetas y conectores se imprimieron en 3D para lograr geometrías complejas y un peso reducido.
+The links were manufactured from **MDF** due to its rigidity and low weight, while the knuckles and connectors were 3D-printed to achieve complex geometries and reduced weight.
 
 ![IMG_Direccion_V1](IMG_Direccion_V1.jpeg)
 ![IMG_Direccion_V2](IMG_Direccion_V2.jpeg)
 
-- **Piezas del sistema de dirección:**
-  - [Conector del Servo a Viga 1](/models/S25_Conexion_Servo-enlace_Rev2.STL).
-  - [Viga 1](/models/S25_Enlace_Direccion_Rev5.STL).
-  - [Viga 2](/models/S25_Soporte_Servo_Rev4.STL).
-  - [Espaciadores](/models/S25_Rondana_Direccion_Rev1.STL).
-  - [Manguetas](/models/S25_Mangueta_Rev1.STL).
- Este ultimo, fue impreso de 2 maneras, uno con el diseño original y otro espejeado.
+- **Steering System Components:**
+  - [Servo to Beam 1 Connector](/models/S25_Conexion_Servo-enlace_Rev2.STL).
+  - [Beam 1](/models/S25_Enlace_Direccion_Rev5.STL).
+  - [Beam 2](/models/S25_Soporte_Servo_Rev4.STL).
+  - [Spacers](/models/S25_Rondana_Direccion_Rev1.STL).
+  - [Steering Knuckles](/models/S25_Mangueta_Rev1.STL).
 
+The last component (steering knuckles) was printed in two versions: one with the original design and another mirrored version.
 
-**Llantas**
+**Wheels**
 
-Utilizamos llantas LEGO del modelo **62.4mm** debido a nuestra experiencia positiva con ellas en competencias previas de Robomission. Confiamos en su excelente **agarre** y la **baja fricción** que generan, lo cual es crucial para la eficiencia energética y la tracción del robot.
+We use **62.4mm** LEGO wheels due to our positive experience with them in previous Robomission competitions. We trust their excellent **grip** and the **low rolling resistance** they generate, which is crucial for the robot's energy efficiency and traction.
+
 ![IMG_Llantas_62.4mm_Lego](IMG_Llantas_62.4mm_Lego.webp)
 
 
-## Gestion de Obstaculos
+## Obstacle Management
 
-**Soporte para Cámara**
+**Camera Mount**
 
-El sistema de visión se compone de varias partes personalizadas:
+The vision system is composed of several custom parts:
 
+  - [Post Mount](/models/S25_Soporte_Poste_Camara_Rev1.STL).
+  - [Post](/models/S25_Poste_Camara_Rev1.STL).
+  - [Camera Mount](/models/S25_Soporte_Camara_Rev1.STL).
+  - [70-Degree Joint](/models/S25_Union_70_grados_Camara_Rev1.STL).
 
-  - [Soporte para Poste](/models/S25_Soporte_Poste_Camara_Rev1.STL).
-  - [Poste](/models/S25_Poste_Camara_Rev1.STL).
-  - [Soporte para camara](/models/S25_Soporte_Camara_Rev1.STL).
-  - [Union de 70 grados](/models/S25_Union_70_grados_Camara_Rev1.STL).
+The **height** and **tilt angle** of the camera are critical for our algorithm. The configuration must allow the robot to detect obstacles within a specific quadrant of the track.
 
-La **altura** y la **inclinación** de la cámara son críticas para nuestro algoritmo. La configuración debe permitir al robot detectar obstáculos dentro de un cuadrante específico de la pista.
+- A **90°** (vertical) tilt did not allow for early detection.
 
-- Una inclinación de **90°** (vertical) no permitía una detección temprana.
+- An initial **45°** tilt pointed the camera too far down, detecting obstacles too late.
 
-- Una inclinación inicial de **45°** apuntaba la cámara demasiado hacia el suelo, detectando los obstáculos demasiado tarde.
-
-- Tras un proceso de **prueba y error**, determinamos que un ángulo de **70°** era el óptimo para nuestro caso de uso, ya que proporciona el campo de visión necesario para una detección oportuna y confiable.
+- After a process of **trial and error**, we determined that a **70°** angle was optimal for our use case, as it provides the necessary field of view for timely and reliable detection.
   
 
-**Actualización 07/09/2025**
+**Update 07/09/2025**
 
-Cambiamos el angulo del soporte para la camara a 63° y subimos la altura del soprte 1/8", anteriormente con las especificaciones que mencionabamos el robot tenia un margen de error muy bajo para posicionarce frente a los obstaculos y fallaba al momento de detectar la posicion y color de los obstaculos.
+We changed the camera mount angle to 63° and raised the mount height by 1/8 inch. Previously, with the mentioned specifications, the robot had a very low margin of error for positioning itself in front of obstacles and failed when detecting the position and color of the obstacles.
 
-**Optimización del Ángulo y Altura de la Cámara**
+**Camera Angle and Height Optimization**
 
-Para mejorar la confiabilidad en la detección de la posición y el color de los obstáculos, ajustamos la configuración:
+To improve reliability in detecting obstacle position and color, we adjusted the configuration:
 
-- **Ángulo de inclinación:** Cambiado de **70°** a **63°**.
+- **Tilt Angle:** Changed from **70°** to **63°**.
   
 [S25_Union63_grados_Poste-Soporte_CamaraRev2](/models/S25_Union63_grados_Poste-Soporte_CamaraRev2.STL).
 
-- **Altura del soporte:** Aumentada en **1/8 de pulgada**.
+- **Mount Height:** Increased by **1/8 inch**.
   
 [S25_Soporte_CamaraRev2.STL](/models/S25_Soporte_CamaraRev2.STL).
 
 
-La configuración anterior, aunque funcional, dejaba un **margen de error muy bajo** para que el robot se posicionara correctamente frente a los obstáculos. Estos ajustes finos incrementaron significativamente la tasa de éxito de la detección y el posicionamiento.
+The previous configuration, while functional, provided a **very low margin of error** for the robot to position itself correctly in front of obstacles. These fine adjustments significantly increased the success rate of detection and positioning.
