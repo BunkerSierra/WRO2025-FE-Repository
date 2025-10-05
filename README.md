@@ -16,6 +16,20 @@ Please note: All requested supplementary information will be available in its co
 
 **Robot Bill of Materials (BOM)**
 
+| Component | Power Requirements | Image | Price |
+|-----------|--------------------|-------|-------|
+| Arduino Mega 2560 |  |  |  |
+| Raspberry Pi 4 Model B (1GB RAM) |  |  |  |
+| Raspberry Pi Camera Rev 1.3 |  |  |  |
+| DC Motor with Encoder: GA37-520 300RPM |  |  |  |
+| H-Bridge TB6612FNG |  |  |  |
+| Servo Motor: MG90S |  |  |  |
+| Ultrasonic Sensors: HC-SR04P |  |  |  |
+| Accelerometer/Gyroscope: GY-9250 |  |  |  |
+| LEDs |  |  |  |
+| Passive Buzzer |  |  |  |
+
+
 *Electrical Parts:*
 
 - Arduino Mega 2560
@@ -26,7 +40,7 @@ Please note: All requested supplementary information will be available in its co
 
 - Motor Driver: IMS-2 WINGXINE
 
-- - **Update 20/08/2025:** H-Bridge TB6612FNG
+  - **Update 20/08/2025:** H-Bridge TB6612FNG
 
 - Voltage Regulator: LM2596 Step-Down Module
 
@@ -38,21 +52,25 @@ Please note: All requested supplementary information will be available in its co
 
 - Accelerometer/Gyroscope: MPU-6050
 
-- - **Update 12/09/2025:** Accelerometer/Gyroscope: GY-9250
+  - **Update 12/09/2025:** Accelerometer/Gyroscope: GY-9250
 
 - 4x LEDs
 
 - Batteries: 6x 3.7v 18650 9900mAh
 
-- - **Update 14/09/2025:** 8x 3.7v 18650 9900mAh
+  - **Update 14/09/2025:** 8x 3.7v 18650 9900mAh
 
-- - **Update 25/09/2025:** 3x 3.7v 18650 3000mAh
+  - **Update 25/09/2025:** 3x 3.7v 18650 3000mAh
+    
+  - **Update 02/10/2025:** 6x 3.7v 18650 3000mAh
 
 - Battery Holders: 3x 18650 Holders
 
-- - **Update 14/09/2025:** 4x 18650 Holders
+  - **Update 14/09/2025:** 4x 18650 Holders
 
-- - **Update 25/09/2025:** 2x 18650 Holders
+  - **Update 25/09/2025:** 2x 18650 Holders
+    
+  - **Update 02/10/2025:** 4x 18650 Holders
 
 - 1x Passive Buzzer
 
