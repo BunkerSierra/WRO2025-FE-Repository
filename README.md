@@ -20,12 +20,12 @@ Please note: All requested supplementary information will be available in its co
 |-----------|--------------------|-------|-------|
 | Arduino Mega 2560 | 0.25-0.5W |  |  |
 | Raspberry Pi 4 Model B (1GB RAM) | 3.06-6.12W |  |  |
-| Raspberry Pi Camera Rev 1.3 | 0.83W | ![IMG_Camara_RB1.3](IMG_Camara_RB1.3.webp) |  |
-| DC Motor with Encoder: GA37-520 300RPM | 5.55-16.65W | ![IMG-Motor12v](IMG-Motor12v.jpg) |  |
+| Raspberry Pi Camera Rev 1.3 | 0.83W | ![IMG_Camara_RB1.3](/schemes/IMG_Camara_RB1.3.webp) |  |
+| DC Motor with Encoder: GA37-520 300RPM | 5.55-16.65W | ![IMG-Motor12v](/schemes/IMG-Motor12v.jpg) |  |
 | H-Bridge TB6612FNG | 0.025W |  |  |
 | Servo Motor: MG90S | 0.5-2.5W |  |  |
 | Ultrasonic Sensors: HC-SR04P x3 | 0.225W |  |  |
-| Accelerometer/Gyroscope: GY-9250 | 0.033W | ![IMG-GY9250](IMG-GY9250.jpg) |  |
+| Accelerometer/Gyroscope: GY-9250 | 0.033W | ![IMG-GY9250](/schemes/IMG-GY9250.jpg) |  |
 | LEDs x4 | 0.264W |  |  |
 | Passive Buzzer |  |  |  |
 
