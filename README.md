@@ -19,7 +19,7 @@ Please note: All requested supplementary information will be available in its co
 ## Robot Specifications:
 
 **Vehicle photos rev.14 (Mexico National Final):**
-| Component | Power Requirements |
+| View | Photo |
 |-----------|--------------------|
 | Top View | ![IMG-Robot_TopView](/v-photos/IMG-Robot_TopView.jpeg) |
 | Bottom View | ![IMG-Robot_BottomView](/v-photos/IMG-Robot_BottomView.jpeg) |
@@ -29,7 +29,7 @@ Please note: All requested supplementary information will be available in its co
 | Left View | ![IMG-Robot_LeftSideView.](/v-photos/IMG-Robot_LeftSideView.jpeg) |
 
 **Vehicle photos rev.15 (New rev. for OC Panama):**
-| Component | Power Requirements |
+| View | Photo |
 |-----------|--------------------|
 | Top View |  |
 | Bottom View |  |
