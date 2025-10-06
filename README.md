@@ -18,16 +18,17 @@ Please note: All requested supplementary information will be available in its co
 
 | Component | Power Requirements | Image | Price |
 |-----------|--------------------|-------|-------|
-| Arduino Mega 2560 | 0.25-0.5W |  |  |
-| Raspberry Pi 4 Model B (1GB RAM) | 3.06-6.12W |  |  |
-| Raspberry Pi Camera Rev 1.3 | 0.83W | ![IMG_Camara_RB1.3](/schemes/IMG_Camara_RB1.3.webp) |  |
-| DC Motor with Encoder: GA37-520 300RPM | 5.55-16.65W | ![IMG-Motor12v](/schemes/IMG-Motor12v.jpg) |  |
-| H-Bridge TB6612FNG | 0.025W |  |  |
-| Servo Motor: MG90S | 0.5-2.5W |  |  |
-| Ultrasonic Sensors: HC-SR04P x3 | 0.225W |  |  |
-| Accelerometer/Gyroscope: GY-9250 | 0.033W | ![IMG-GY9250](/schemes/IMG-GY9250.jpg) |  |
-| LEDs x4 | 0.264W |  |  |
-| Passive Buzzer |  |  |  |
+| Arduino Mega 2560 | 0.25-0.5W | IMG-AM.jpg | ≈ 24.46 Dlls |
+| Raspberry Pi 4 Model B (1GB RAM) | 3.06-6.12W | ![IMG-RBPi4](/schemes/IMG-RBPi4.jfif) | ≈ 46.90 Dlls |
+| Raspberry Pi Camera Rev 1.3 | 0.83W | ![IMG_Camara_RB1.3](/schemes/IMG_Camara_RB1.3.webp) | ≈ 25 Dlls |
+| DC Motor with Encoder: GA37-520 300RPM | 5.55-16.65W | ![IMG-Motor12v](/schemes/IMG-Motor12v.jpg) | ≈ 22.12 Dlls |
+| H-Bridge TB6612FNG | 0.025W | ![IMG-TB6612FNG](/schemes/IMG-TB6612FNG.jpg) | ≈ 4.35 Dlls |
+| Servo Motor: MG90S | 0.5-2.5W | ![IMG-MG90S](/schemes/IMG-MG90S.jpg) | ≈ 4.08 Dlls |
+| Ultrasonic Sensors: HC-SR04P x3 | 0.225W | ![IMG-HC-SR04P](/schemes/IMG-HC-SR04P.jpg) | ≈ 2.72 Dlls **(one unit)** |
+| Accelerometer/Gyroscope: GY-9250 | 0.033W | ![IMG-GY9250](/schemes/IMG-GY9250.jpg) | ≈ 9.24 Dlls |
+| LEDs x4 | 0.264W | ![IMG-LED](/schemes/IMG-LED.webp) | ≈ 0.11 Dlls **(one unit)** |
+| Passive Buzzer |  | ![IMG-Buzzer.jpg](/schemes/IMG-Buzzer.jpg) | ≈ 0.27 Dlls |
+| **Total** | --- | --- | **≈ 145.02 Dlls** |
 
 
 *Electrical Parts:*
