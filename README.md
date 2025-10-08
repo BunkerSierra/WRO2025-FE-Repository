@@ -31,20 +31,21 @@ Please note: All requested supplementary information will be available in its co
 **Vehicle photos rev.15 (New rev. for OC Panama):**
 | View | Photo |
 |-----------|--------------------|
-| Top View |  |
-| Bottom View |  |
-| Front View |  |
-| Back View |  |
-| Right View |  |
-| Left View |  |
+| Top View | ![IMG_TV](/v-photos/OC_Panama/IMG_TV.JPG) |
+| Bottom View | ![IMG_BMV](/v-photos/OC_Panama/IMG_BMV.JPG) |
+| Front View | ![IMG_FV](/v-photos/OC_Panama/IMG_FV.JPG) |
+| Back View | ![IMG_BKV](/v-photos/OC_Panama/IMG_BKV.JPG) |
+| Right View | ![IMG_RV](/v-photos/OC_Panama/IMG_RV.JPG) |
+| Left View | ![IMG_LV](/v-photos/OC_Panama/IMG_LV.JPG) |
 
 - **Weight (Maximum Load):** 1165 grams.
+- **width:** cm | **Length** cm | **Heigth:** cm
 
 **Robot Bill of Materials (BOM)**
 
 | Component | Power Requirements | Image | Price |
 |-----------|--------------------|-------|-------|
-| Arduino Mega 2560 | 0.25-0.5W | IMG-AM.jpg | ≈ 24.46 Dlls |
+| Arduino Mega 2560 | 0.25-0.5W | ![IMG-AM](/schemes/IMG-AM.jpg) | ≈ 24.46 Dlls |
 | Raspberry Pi 4 Model B (1GB RAM) | 3.06-6.12W | ![IMG-RBPi4](/schemes/IMG-RBPi4.jfif) | ≈ 46.90 Dlls |
 | Raspberry Pi Camera Rev 1.3 | 0.83W | ![IMG_Camara_RB1.3](/schemes/IMG_Camara_RB1.3.webp) | ≈ 25 Dlls |
 | DC Motor with Encoder: GA37-520 300RPM | 5.55-16.65W | ![IMG-Motor12v](/schemes/IMG-Motor12v.jpg) | ≈ 22.12 Dlls |
@@ -137,6 +138,9 @@ Finally, we added two lamps to the robot to improve our camera's optics. By gene
   
 Mechanical Parts
 ===
+
+*You are about to see all the information contained in our [models](/models/README.md). folder. If you wish to only view the information from this specific section, you can access it directly via the hyperlink (with the exception of the updates for the Panama Open Championship).*
+
 One key point we would like to emphasize is that the majority of our mechanical parts were manufactured using laser cutting. Another small section of parts, primarily for the steering system, were 3D-printed.
 
 ## Vehicle Chasis
@@ -280,6 +284,9 @@ The previous configuration, while functional, provided a **very low margin of er
 
 ## General Vehicle Electrical Diagram: 
 
+
+*You are about to see all the information contained in our [schemes](/schemes/README.md). folder. If you wish to only view the information from this specific section, you can access it directly via the hyperlink (with the exception of the updates for the Panama Open Championship).*
+
 ![DE-S25_bb](/schemes/DE-S25_bb.jpg)
 
 ***Specifications:*** The **Arduino MEGA** board is powered directly through the serial communication port of the **Raspberry Pi 4** computer. The Raspberry Pi, in turn, is powered by our **LM2596** voltage regulator, set to **5.1V** and **3A**. We adjusted the regulator to 5.1V because when set exactly to 5V, the Raspberry Pi would often experience power supply issues.
@@ -401,6 +408,8 @@ The solution was to switch to the standard Raspberry Pi camera. This change imme
 
 
 ## Position Control
+
+*You are about to see all the information contained in our [src](/src/README.md). folder. If you wish to only view the information from this specific section, you can access it directly via the hyperlink (with the exception of the updates for the Panama Open Championship).*
 
 **Encoder**
 
