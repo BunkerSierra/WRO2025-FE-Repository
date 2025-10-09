@@ -341,6 +341,44 @@ To make the robot move in a straight line, we use a gyro sensor with a PD contro
 
 ![IMG_Offset](/schemes/IMG_Offset.jpeg)
 
+To calculate the robot's deviation without the gyro sensor's PD control, we conducted 10 tests where the robot advanced 3 meters. During these tests, we realized the robot had a very large deviation, with an average of 14° deviation ± a standard deviation of 18°.
+
+![IMG-OFFSET1](/schemes/IMG-OFFSET1.jpeg)
+
+| Triangle  | Leg a (cm) | Leg b (cm) | Hypotenuse c (cm) | Angle α (°) | Angle β (°) | Right Angle (°) |
+|-----------|------------|------------|-------------------|-------------|-------------|-----------------|
+| T1        | 288.00     | 41.50      | 291.00            | 8.21        | 81.79       | 90.00           |
+| T2        | 289.00     | 47.00      | 292.80            | 9.24        | 80.76       | 90.00           |
+| T3        | 286.00     | 58.00      | 291.82            | 11.46       | 78.54       | 90.00           |
+| T4        | 263.00     | 112.00     | 286.00            | 22.94       | 67.06       | 90.00           |
+| T5        | 251.00     | 132.00     | 283.10            | 27.74       | 62.26       | 90.00           |
+| T6        | 267.00     | 92.00      | 282.37            | 19.03       | 70.97       | 90.00           |
+| T7        | 279.00     | 55.00      | 284.37            | 11.14       | 78.86       | 90.00           |
+| T8        | 279.00     | 63.00      | 286.02            | 12.73       | 77.27       | 90.00           |
+| T9        | 279.00     | 65.00      | 286.47            | 13.12       | 76.88       | 90.00           |
+| T10       | 278.00     | 74.00      | 287.68            | 14.91       | 75.09       | 90.00           |
+| Average   | 275.90     | 73.95      | 287.16            | 14.15       | 75.85       | 90.00           |
+
+Therefore, we had to modify the dimensions of our steering knuckles, as they had a fairly high level of backlash, which was causing those results in the robot. Once the knuckle measurements were changed, we achieved a deviation of 4.88° ± a standard deviation of 2.61 degrees.
+
+![IMG-OFFSET2](/schemes/IMG-OFFSET2.jpeg)
+
+| Triangle  | Leg a (cm) | Leg b (cm) | Hypotenuse c (cm) | Angle α (°) | Angle β (°) | Right Angle (°) |
+|-----------|------------|------------|-------------------|-------------|-------------|-----------------|
+| T1        | 279.00     | 26.00      | 280.21            | 5.32        | 84.68       | 90.00           |
+| T2        | 289.00     | 36.00      | 291.23            | 7.10        | 82.90       | 90.00           |
+| T3        | 276.00     | 48.00      | 280.14            | 9.86        | 80.14       | 90.00           |
+| T4        | 291.00     | 19.00      | 291.62            | 3.74        | 86.26       | 90.00           |
+| T5        | 290.00     | 15.00      | 290.39            | 2.96        | 87.04       | 90.00           |
+| T6        | 290.00     | 22.00      | 290.83            | 4.34        | 85.66       | 90.00           |
+| T7        | 286.50     | 35.50      | 288.69            | 7.06        | 82.94       | 90.00           |
+| T8        | 288.00     | 11.50      | 288.23            | 2.29        | 87.71       | 90.00           |
+| T9        | 288.00     | 5.00       | 288.04            | 1.00        | 89.00       | 90.00           |
+| T10       | 291.00     | 26.00      | 292.16            | 5.11        | 84.89       | 90.00           |
+
+These changes were carried out because no matter how good our gyro-based PD control was, there was an underlying mechanical problem. It is well known that hardware issues cannot be solved with software.
+
+
 Similarly, we use the gyro sensor for the robot's turns. Upon reaching the desired point, the robot turns the wheels and moves forward until it detects the target angle. Once reached, it stops the motors and returns the steering to the neutral position.
 
 ![IMG_GiroSensor](/schemes/IMG_GiroSensor.jpg)
@@ -365,7 +403,7 @@ To power our **Raspberry Pi 4 computer**, we use an **LM2596 voltage regulator s
 
 ![IMG_Baterias_3.7v](/schemes/IMG_Baterias_3.7v.webp)
 
-## Sensors
+## Ultrasonic Sensors
 At the start of the season, our initial proposal was to use **VL53L0X laser sensors**. We thought they would be the best option due to their long range and precision, so our first chassis was designed for them. During testing, we realized their characteristics were problematic for us: the **conical field of view** caused the sensors to detect the floor, leading to many failures. Furthermore, using 3 of these sensors consumed an excessive amount of our microcontroller's memory (at that time, an Arduino UNO).
 
 ![IMG_SensorLaser](/schemes/IMG_SensorLaser.jpg)
