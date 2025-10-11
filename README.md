@@ -36,7 +36,7 @@ Please note: All requested supplementary information will be available in its co
 | Right View | ![IMG_RV](/v-photos/OC_Panama/IMG_RV.JPG) |
 | Left View | ![IMG_LV](/v-photos/OC_Panama/IMG_LV.JPG) |
 
-- **Weight (Maximum Load):** 1165 grams.
+- **Weight (Maximum Load):** 1166 grams.
 - **width:** cm | **Length** cm | **Heigth:** cm
 
 **Robot Bill of Materials (BOM)**
