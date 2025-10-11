@@ -128,6 +128,14 @@ Please note: All requested supplementary information will be available in its co
 
 We have implemented several changes to the robot's design, specifically focusing on reducing its footprint. In other words, we have reduced the robot's width and length while taking full advantage of the established height limit (30 cm). We have redistributed the components accordingly to optimize the use of space.
 
+here is the list of the STL desings of all the parts of the robot chassis that where changed:
+
+- [S25_Chasis_Rev15B](/models/Open_Championship_Panama/S25_Chasis_Rev15B.STL).
+- [BS_Baterias_Rev3.STL](/models/Open_Championship_Panama/BS_Baterias_Rev3.STL).
+- [C3_Baterias_Rev3.STL](/models/Open_Championship_Panama/C3_Baterias_Rev3.STL).
+- [S25_3er_Piso_Rev3.STL](/models/Open_Championship_Panama/S25_3er_Piso_Rev3.STL).
+- [](/models/Open_Championship_Panama/).
+
 We have also significantly reduced the robot's turning circumference. Previously, when the robot executed a full turn, the diameter of the circle it traced was 62 cm. This was quite large and allowed the robot to collide easily with the field's barriers and obstacles (in both challenges). By reducing the robot's overall size, the turning circle diameter is now 30 cm. We managed to cut it in half, giving the robot a greater margin of error to avoid collisions with various objects on the field. 
 
 Another major change was made to the robot's power system. To be frank, our previous design was poorly planned. For the Open Championship, we opted to use **two packs in parallel of three 3.7V 30000mAh batteries connected in series(3S2P)**. 
