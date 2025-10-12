@@ -434,6 +434,8 @@ To power our **Raspberry Pi 4 computer**, we use an **LM2596 voltage regulator s
 ## Ultrasonic Sensors
 At the start of the season, our initial proposal was to use **VL53L0X laser sensors**. We thought they would be the best option due to their long range and precision, so our first chassis was designed for them. During testing, we realized their characteristics were problematic for us: the **conical field of view** caused the sensors to detect the floor, leading to many failures. Furthermore, using 3 of these sensors consumed an excessive amount of our microcontroller's memory (at that time, an Arduino UNO).
 
+In our specific case, the decision to discard the laser sensors was primarily because we did not consider the points mentioned earlier. If at any point someone wishes to replicate this project, please note that with the necessary modifications, these sensors could be used and potentially yield better results than ours. As a recommendation, we can say that if others wish to use them, they should have a microcontroller with greater memory capacity, and the sensors should be positioned at least 5 cm above the ground.
+
 ![IMG_SensorLaser](/schemes/IMG_SensorLaser.jpg)
 
 These issues led us to replace them with **HC-SR04 ultrasonic sensors**. We used these in the regional competition, and they remain in our current model. The change was straightforward thanks to our modular design; the mounts for the ultrasonic sensors we had designed for previous projects used the same mounting system as the laser sensor mounts on the chassis, making the transition quick and easy.
