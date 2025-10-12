@@ -37,7 +37,7 @@ Please note: All requested supplementary information will be available in its co
 | Left View | ![IMG_LV](/v-photos/OC_Panama/IMG_LV.JPG) |
 
 - **Weight (Maximum Load):** 1166 grams.
-- **width:** cm | **Length** cm | **Heigth:** cm
+- **width:** 1.5cm | **Length** 19.5cm | **Heigth:** 23.9cm
 
 **Robot Bill of Materials (BOM)**
 
@@ -128,19 +128,27 @@ Please note: All requested supplementary information will be available in its co
 
 We have implemented several changes to the robot's design, specifically focusing on reducing its footprint. In other words, we have reduced the robot's width and length while taking full advantage of the established height limit (30 cm). We have redistributed the components accordingly to optimize the use of space.
 
-here is the list of the STL desings of all the parts of the robot chassis that where changed:
+Here is the list of the STL desings of all the parts of the robot chassis that where changed:
 
-- [S25_Chasis_Rev15B](/models/Open_Championship_Panama/S25_Chasis_Rev15B.STL).
-- [BS_Baterias_Rev3.STL](/models/Open_Championship_Panama/BS_Baterias_Rev3.STL).
-- [C3_Baterias_Rev3.STL](/models/Open_Championship_Panama/C3_Baterias_Rev3.STL).
-- [S25_3er_Piso_Rev3.STL](/models/Open_Championship_Panama/S25_3er_Piso_Rev3.STL).
-- [](/models/Open_Championship_Panama/).
+- [S25 Chassis Rev15B](/models/Open_Championship_Panama/S25_Chasis_Rev15B.STL).
+- [BS Batteries Rev3.STL](/models/Open_Championship_Panama/BS_Baterias_Rev3.STL).
+- [C3 Batteries Rev3.STL](/models/Open_Championship_Panama/C3_Baterias_Rev3.STL).
+- [S25 Level 3 Rev3.STL](/models/Open_Championship_Panama/S25_3er_Piso_Rev3.STL).
+
 
 We have also significantly reduced the robot's turning circumference. Previously, when the robot executed a full turn, the diameter of the circle it traced was 62 cm. This was quite large and allowed the robot to collide easily with the field's barriers and obstacles (in both challenges). By reducing the robot's overall size, the turning circle diameter is now 30 cm. We managed to cut it in half, giving the robot a greater margin of error to avoid collisions with various objects on the field. 
 
 Another major change was made to the robot's power system. To be frank, our previous design was poorly planned. For the Open Championship, we opted to use **two packs in parallel of three 3.7V 30000mAh batteries connected in series(3S2P)**. 
 
 Finally, we added two lamps to the robot to improve our camera's optics. By generating our own light source, detecting obstacles becomes a simpler task, as it no longer depends on the varying light conditions and parameters of the different environments where the robot operates. 
+
+Here is the list of the STL desings of the camera parts that where changed:
+
+- [Light L Mount](/models/Open_Championship_Panama/Soporte_L_Rev1.STL).
+- [Camera Mount_Rev3](/models/Open_Championship_Panama/Soporte_Camara_Rev3.STL).
+
+This is the brand and especifc model of the lamps tha wew used: **Defiant 226 129**
+
   
 Mechanical Parts
 ===
@@ -333,6 +341,14 @@ The previous configuration, while functional, provided a **very low margin of er
   
 ![IMG-DE_Potencia](/schemes/IMG-DE_Potencia.jpg)
 
+  **Update 25/09/2025**
+  ***Update for the Panama Open Championship***
+
+  The following picture shows the new configuration of the robot's battery pack **(3S2P)** mentioned earlier in the repository:
+  
+  ![IMG-BatteryConfigRev3](/schemes/IMG-BatteryConfigRev3.jpg)
+
+
 
 Mobility Management
 ===
@@ -368,6 +384,8 @@ To calculate the robot's deviation without the gyro sensor's PD control, we cond
 | Average   | 275.90     | 73.95      | 287.16            | 14.15       | 75.85       | 90.00           |
 
 Therefore, we had to modify the dimensions of our steering knuckles, as they had a fairly high level of backlash, which was causing those results in the robot. Once the knuckle measurements were changed, we achieved a deviation of 4.88° ± a standard deviation of 2.61 degrees.
+
+You can see here the STL archive of the Steering Kuckels whit the new adjustments: [Steering Knuckles Rev2](/models/Open_Championship_Panama/S25_Mangueta_Rev2.STL)
 
 ![IMG-OFFSET2](/schemes/IMG-OFFSET2.jpeg)
 
