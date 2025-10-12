@@ -1,10 +1,16 @@
 Video
 ====
 
-Open challenge performance video:
+**Open challenge performance video:**
+
+Mexico National Final:
 
 - https://youtu.be/lZPUBEgzqJM
 
-Obstacle challenge performance video:
+Panama Open Championship:
+
+- https://youtu.be/l0YvDuQzFJU
+
+**Obstacle challenge performance video:**
 
 - https://youtu.be/Cak9aAYpDeg
