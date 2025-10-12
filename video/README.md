@@ -1,10 +1,10 @@
 Video
 ====
 
-Video Desafío Abierto:
+Open challenge performance video:
 
 - https://youtu.be/lZPUBEgzqJM
 
-Video Desafío de obstaculos:
+Obstacle challenge performance video:
 
 - https://youtu.be/Cak9aAYpDeg
