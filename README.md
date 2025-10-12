@@ -31,13 +31,13 @@ Please note: All requested supplementary information will be available in its co
 |-----------|--------------------|
 | Top View | ![IMG_TV](/v-photos/OC_Panama/IMG_TV.JPG) |
 | Bottom View | ![IMG_BMV](/v-photos/OC_Panama/IMG_BMV.JPG) |
-| Front View | ![IMG_FV](/v-photos/OC_Panama/IMG_FV.JPG) |
-| Back View | ![IMG_BKV](/v-photos/OC_Panama/IMG_BKV.JPG) |
-| Right View | ![IMG_RV](/v-photos/OC_Panama/IMG_RV.JPG) |
-| Left View | ![IMG_LV](/v-photos/OC_Panama/IMG_LV.JPG) |
+| Front View | ![IMG_FV](/v-photos/OC_Panama/IMG-FV.jpeg) |
+| Back View | ![IMG_BKV](/v-photos/OC_Panama/IMG-BKV.jpeg) |
+| Right View | ![IMG_RV](/v-photos/OC_Panama/IMG-RV.jpeg) |
+| Left View | ![IMG_LV](/v-photos/OC_Panama/IMG-LV.jpeg) |
 
 - **Weight (Maximum Load):** 1166 grams.
-- **width:** 1.5cm | **Length** 19.5cm | **Heigth:** 23.9cm
+- **Width:** 1.5cm | **Length** 19.5cm | **Heigth:** 23.9cm
 
 **Robot Bill of Materials (BOM)**
 
@@ -148,6 +148,8 @@ Here is the list of the STL desings of the camera parts that where changed:
 - [Camera Mount_Rev3](/models/Open_Championship_Panama/Soporte_Camara_Rev3.STL).
 
 This is the brand and especifc model of the lamps tha wew used: **Defiant 226 129**
+
+![IMG-Lamparas](/schemes/IMG-Lamparas.jpeg)
 
   
 Mechanical Parts
