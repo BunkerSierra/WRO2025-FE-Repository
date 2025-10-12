@@ -1,4 +1,4 @@
-Fotos del Vehiculo
+Vehicle Photos
 ====
 
-Este apartado cuenta con las 6 imagenes de todas las vistas del robot, en otras secciones del repositorio hay mas imagenes del robot, pero de puntos especificos que se mencionan en dichos apartados.
+This section contains 6 images showing all views of the robot. Other sections of the repository include more images of the robot, but these focus on specific points mentioned in those respective sections.
